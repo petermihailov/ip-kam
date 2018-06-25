@@ -4,14 +4,14 @@ import GridListTileBar from '@material-ui/core/GridListTileBar'
 import Grid from '@material-ui/core/Grid'
 import Radio from '@material-ui/core/Radio'
 
-import img0 from './img/ipkam_0000_orher.jpg'
-import img1 from './img/ipkam_0001_kvartira.jpg'
-import img2 from './img/ipkam_0002_restoran.jpg'
-import img3 from './img/ipkam_0003_mojka.jpg'
-import img4 from './img/ipkam_0004_magazin.jpg'
-import img5 from './img/ipkam_0005_apteka.jpg'
-import img6 from './img/ipkam_0006_strojka.jpg'
-import img7 from './img/ipkam_0007_home.jpg'
+import img0 from './img/survey_orher.jpg'
+import img1 from './img/survey_flat.jpg'
+import img2 from './img/survey_restaurant.jpg'
+import img3 from './img/survey_wash.jpg'
+import img4 from './img/survey_shop.jpg'
+import img5 from './img/survey_pharmacy.jpg'
+import img6 from './img/survey_building.jpg'
+import img7 from './img/survey_cottage.jpg'
 
 const data = [
   {
