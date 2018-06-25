@@ -5,7 +5,7 @@ import Section from '../../../components/section/section'
 import Survey from '../../../components/survey/survey'
 
 const SurveySection = ({ classes, ...props }) => (
-  <Section>
+  <Section banner>
     <Grid container spacing={16}>
       <Grid item xs={12}>
         <Typography align="center" color="inherit" variant="title">
