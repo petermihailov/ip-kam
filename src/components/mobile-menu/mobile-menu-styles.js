@@ -1,5 +1,8 @@
-export default {
+export default (theme) => ({
   list: {
-    width: 250,
+    width: 240,
+    [theme.breakpoints.up('sm')]: {
+      width: 260,
+    },
   },
-}
+});
