@@ -23,7 +23,7 @@ const styles = theme => ({
     padding: theme.spacing.unit,
     [theme.breakpoints.up('sm')]: {
       padding: theme.spacing.unit * 4,
-    }
+    },
   },
   container: {
     padding: theme.spacing.unit * 2,
