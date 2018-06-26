@@ -57,6 +57,9 @@ const styles = theme => ({
     display: 'block',
     height: 90,
     objectFit: 'cover',
+    [theme.breakpoints.up('sm')]: {
+      height: 150,
+    },
   },
   radio: {
     color: 'inherit',
@@ -70,7 +73,7 @@ class TypeQuestion extends React.Component {
     return (
       <Grid container spacing={8}>
         {data.map(({ img, title }, idx) => (
-          <Grid key={img} item xs={6}>
+          <Grid item key={img} xs={6} sm={3}>
             <div className={classes.container}>
               <img className={classes.img} src={img} alt="" />
               <GridListTileBar

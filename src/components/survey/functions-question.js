@@ -27,7 +27,7 @@ class FunctionsQuestion extends React.Component {
       <FormGroup onChange={onChange}>
         <Grid container spacing={8}>
           {data.map((label, idx) => (
-            <Grid key={label} item xs={6}>
+            <Grid key={label} item xs={6} md={3}>
               <FormControlLabel
                 name="requirements"
                 value={idx.toString()}

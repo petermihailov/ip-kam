@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import withWidth from '@material-ui/core/withWidth'
 import { withStyles } from '@material-ui/core/styles'
 import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
@@ -14,15 +15,36 @@ import CamsQuestion from './cams-question'
 import BonusQuestion from './bonus-question'
 
 const styles = theme => ({
+  root: {
+    maxWidth: 940,
+    margin: '0 auto',
+  },
+  stepper: {
+    padding: theme.spacing.unit,
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing.unit * 4,
+    }
+  },
+  container: {
+    padding: theme.spacing.unit * 2,
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      minHeight: 170,
+      padding: theme.spacing.unit * 4,
+      paddingTop: 0,
+    },
+  },
   button: {
     marginTop: theme.spacing.unit,
     marginRight: theme.spacing.unit,
   },
   actionsContainer: {
     marginBottom: theme.spacing.unit * 2,
-  },
-  resetContainer: {
-    padding: theme.spacing.unit * 3,
+    [theme.breakpoints.up('md')]: {
+      marginBottom: 0,
+    },
   },
 })
 
@@ -108,54 +130,80 @@ class Survey extends React.Component {
     }
   }
 
-  render() {
+  renderStep = idx => {
     const { classes } = this.props
     const steps = getSteps()
     const { activeStep } = this.state
+    const step = idx !== undefined ? idx : activeStep
 
     return (
-      <div>
-        <Stepper activeStep={activeStep} orientation="vertical">
+      <Fragment>
+        {this.getStepContent(step)}
+        <div className={classes.actionsContainer}>
+          <div>
+            <Button
+              disabled={activeStep === 0}
+              onClick={this.handleBack}
+              className={classes.button}
+            >
+              Назад
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={this.handleNext}
+              className={classes.button}
+            >
+              {activeStep === steps.length - 1 ? 'Результат' : 'Далее'}
+            </Button>
+          </div>
+        </div>
+      </Fragment>
+    )
+  }
+
+  render() {
+    const { classes, width } = this.props
+    const steps = getSteps()
+    const { activeStep } = this.state
+
+    const isHorizontal = width !== 'xs'
+
+    return (
+      <Paper className={classes.root}>
+        <Stepper
+          className={classes.stepper}
+          activeStep={activeStep}
+          orientation={isHorizontal ? 'horizontal' : 'vertical'}
+        >
           {steps.map((label, idx) => {
             return (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>
-                <StepContent>
-                  {this.getStepContent(idx)}
-                  <div className={classes.actionsContainer}>
-                    <div>
-                      <Button
-                        disabled={activeStep === 0}
-                        onClick={this.handleBack}
-                        className={classes.button}
-                      >
-                        Назад
-                      </Button>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={this.handleNext}
-                        className={classes.button}
-                      >
-                        {activeStep === steps.length - 1
-                          ? 'Результат'
-                          : 'Далее'}
-                      </Button>
-                    </div>
-                  </div>
-                </StepContent>
+                {!isHorizontal ? (
+                  <StepContent>{this.renderStep(idx)}</StepContent>
+                ) : (
+                  <Fragment />
+                )}
               </Step>
             )
           })}
         </Stepper>
-        {activeStep === steps.length && (
-          <Paper square elevation={0} className={classes.resetContainer}>
-            <Typography>🎉 All steps completed - you&quot;re finished 🎉</Typography>
+
+        {activeStep === steps.length ? (
+          <Paper square elevation={0} className={classes.container}>
+            <Typography>
+              🎉 All steps completed - you&quot;re finished 🎉
+            </Typography>
           </Paper>
-        )}
-      </div>
+        ) : isHorizontal ? (
+          <Paper square elevation={0} className={classes.container}>
+            {this.renderStep()}
+          </Paper>
+        ) : null}
+      </Paper>
     )
   }
 }
 
-export default withStyles(styles)(Survey)
+export default withStyles(styles)(withWidth()(Survey))
