@@ -7,7 +7,8 @@ const s = theme => ({
     padding: theme.spacing.unit * 4,
     textAlign: 'center',
     color: '#fff',
-    backgroundImage: 'linear-gradient(160deg, rgb(7, 20, 34) 10%, rgb(11, 32, 56) 80%)',
+    backgroundImage:
+      'linear-gradient(160deg, rgb(7, 20, 34) 10%, rgb(11, 32, 56) 80%)',
     overflow: 'hidden',
   },
 })

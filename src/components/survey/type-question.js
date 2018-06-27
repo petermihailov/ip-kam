@@ -9,7 +9,7 @@ import img1 from './img/survey_flat.jpg'
 import img2 from './img/survey_restaurant.jpg'
 import img3 from './img/survey_wash.jpg'
 import img4 from './img/survey_shop.jpg'
-import img5 from './img/survey_pharmacy.jpg'
+import img5 from './img/survey_stock.jpg'
 import img6 from './img/survey_building.jpg'
 import img7 from './img/survey_cottage.jpg'
 
@@ -23,7 +23,7 @@ const data = [
     img: img7,
   },
   {
-    title: 'Аптека',
+    title: 'Склад',
     img: img5,
   },
   {

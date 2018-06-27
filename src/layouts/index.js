@@ -20,7 +20,7 @@ class Layout extends Component {
 
     return (
       <Fragment>
-        <Header location={location.pathname}/>
+        <Header location={location.pathname} />
         <div>{children({ ...this.props, openForm: this.openForm })}</div>
         <Footer />
         <OrderDialog onClose={this.closeForm} open={orderFormIsOpen} />

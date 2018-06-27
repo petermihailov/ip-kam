@@ -14,21 +14,19 @@ import Toolbar from '@material-ui/core/Toolbar'
 import MobileMenu from '../mobile-menu/mobile-menu'
 import Logo from '../logo/logo'
 
-const Header = ({ classes, width, location}) => (
+const Header = ({ classes, width, location }) => (
   <AppBar position="sticky" color="default">
     <Toolbar className={classes.toolbar}>
-      <Logo/>
-      {
-        ['xs', 'sm'].includes(width) ? (
-          <MobileMenu/>
-        ) : (
-          <Tabs value={pages.map(({route}) => route).indexOf(location)}>
-            {pages.map(({ label, route }, idx) => (
-              <Tab key={idx} label={label} component={Link} to={route}/>
-            ))}
-          </Tabs>
-        )
-      }
+      <Logo />
+      {['xs', 'sm'].includes(width) ? (
+        <MobileMenu />
+      ) : (
+        <Tabs value={pages.map(({ route }) => route).indexOf(location)}>
+          {pages.map(({ label, route }, idx) => (
+            <Tab key={idx} label={label} component={Link} to={route} />
+          ))}
+        </Tabs>
+      )}
     </Toolbar>
   </AppBar>
 )
