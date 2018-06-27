@@ -15,12 +15,12 @@ class Layout extends Component {
   openForm = () => this.setState({ orderFormIsOpen: true })
 
   render() {
-    const { children } = this.props
+    const { children, location } = this.props
     const { orderFormIsOpen } = this.state
 
     return (
       <Fragment>
-        <Header />
+        <Header location={location.pathname}/>
         <div>{children({ ...this.props, openForm: this.openForm })}</div>
         <Footer />
         <OrderDialog onClose={this.closeForm} open={orderFormIsOpen} />
