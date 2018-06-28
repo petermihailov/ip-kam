@@ -49,7 +49,6 @@ const IndexPage = ({ openForm }) => {
       </HeaderBanner>
       <MediaSideSection />
       <SurveySection />
-      <ProductsMobileSection />
       <CapabilitiesSection />
       <TimelineSection />
       <AdvantageSection />

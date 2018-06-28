@@ -10,7 +10,6 @@ const styles = theme => ({
   },
   video: {
     position: 'absolute',
-    zIndex: -1,
     top: '5%',
     left: '3%',
     width: '94%',
@@ -18,6 +17,7 @@ const styles = theme => ({
   },
   iPhoneFrame: {
     display: 'block',
+    position: 'relative'
   },
 })
 

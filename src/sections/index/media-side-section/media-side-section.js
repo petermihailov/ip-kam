@@ -11,7 +11,7 @@ const s = theme => ({
     order: 1,
   },
   gutterBottom: {
-    marginBottom: theme.spacing.unit,
+    marginBottom: theme.spacing.unit * 2,
   },
   [theme.breakpoints.up('sm')]: {
     mobileBottom: {
@@ -22,7 +22,7 @@ const s = theme => ({
 
 const MediaSideSection = ({ classes }) => (
   <Section>
-    <Typography align="center" color="inherit" variant="title" gutterBottom>
+    <Typography align="center" variant="title" gutterBottom>
       Видеонаблюдение через смартфон
     </Typography>
     <Grid container spacing={16} alignItems="center" className={classes.gutterBottom}>
@@ -37,7 +37,7 @@ const MediaSideSection = ({ classes }) => (
         <IphoneVideo/>
       </Grid>
     </Grid>
-    <Typography align="center" color="inherit" variant="title" gutterBottom>
+    <Typography align="center" variant="title" gutterBottom>
       Видеонаблюдение на компьютере
     </Typography>
     <Grid container spacing={16} alignItems="center">

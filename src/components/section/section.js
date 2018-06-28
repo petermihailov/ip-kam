@@ -1,6 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
+import Paper from '@material-ui/core/Paper'
 
 const s = theme => ({
   section: {
@@ -13,12 +14,15 @@ const s = theme => ({
 })
 
 const Section = ({ classes, children, banner = false, ...props }) => (
-  <section
+  <Paper
+    component="section"
+    elevation={0}
+    square
     className={cn(classes.section, { [classes.isBanner]: banner })}
     {...props}
   >
     {children}
-  </section>
+  </Paper>
 )
 
 export default withStyles(s)(Section)

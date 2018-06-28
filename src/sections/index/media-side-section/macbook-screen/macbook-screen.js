@@ -10,7 +10,6 @@ const styles = theme => ({
   },
   video: {
     position: 'absolute',
-    zIndex: -1,
     top: '7%',
     left: '17%',
     width: '66%',
@@ -18,6 +17,7 @@ const styles = theme => ({
   },
   macbookFrame: {
     display: 'block',
+    position: 'relative'
   },
 })
 

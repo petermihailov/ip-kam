@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
 import s from './logo-styles'
 
@@ -24,7 +25,7 @@ const Logo = ({ classes }) => {
             d="M219.27,146.178c-20.177,0-37.401,7.139-51.678,21.411c-14.272,14.277-21.411,31.501-21.411,51.678 c0,20.175,7.135,37.402,21.411,51.673c14.277,14.277,31.504,21.416,51.678,21.416c20.179,0,37.406-7.139,51.676-21.416 c14.274-14.271,21.413-31.498,21.413-51.673c0-20.177-7.139-37.401-21.413-51.678C256.676,153.316,239.449,146.178,219.27,146.178 z"
           />
         </svg>
-        IP-Кам
+        <Typography variant="title">IP-Кам</Typography>
       </div>
     </Link>
   )

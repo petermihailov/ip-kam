@@ -8,13 +8,12 @@ const SurveySection = ({ classes, ...props }) => (
   <Section>
     <Grid container spacing={8}>
       <Grid item xs={12}>
-        <Typography align="center" color="inherit" variant="title">
-          Пройдите тест за 1 минуту и получите 3 сметы на установку
-          видеонаблюдения
+        <Typography align="center" variant="title">
+          Пройдите тест и получите смету на установку видеонаблюдения
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Survey />
+        <Survey/>
       </Grid>
     </Grid>
   </Section>
