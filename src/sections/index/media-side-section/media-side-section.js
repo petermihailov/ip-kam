@@ -6,19 +6,31 @@ import Section from '../../../components/section/section'
 import IphoneVideo from './iphone-video/iphone-video'
 import MacbookVideo from './macbook-screen/macbook-screen'
 
-const s = theme => ({})
+const s = theme => ({
+  mobileBottom: {
+    order: 1,
+  },
+  gutterBottom: {
+    marginBottom: theme.spacing.unit,
+  },
+  [theme.breakpoints.up('sm')]: {
+    mobileBottom: {
+      order: 0,
+    },
+  },
+})
 
-const MediaSideSection = () => (
+const MediaSideSection = ({ classes }) => (
   <Section>
     <Typography align="center" color="inherit" variant="title" gutterBottom>
       Видеонаблюдение через смартфон
     </Typography>
-    <Grid container spacing={8} alignItems="center">
-      <Grid item xs={12} sm={6}>
+    <Grid container spacing={16} alignItems="center" className={classes.gutterBottom}>
+      <Grid item xs={12} sm={6} className={classes.mobileBottom}>
         <Typography>
-          Сегодня удаленное видеонаблюдение можно организовать через любое устройство, имеющее выход в интернет, даже
-          через мобильный телефон. Это самое рациональное, эффективное и удобное решение для тех, кто ценит мобильность
-          и комфорт.
+          Самое рациональное, эффективное и удобное решение для тех, кто ценит мобильность и комфорт. Удаленное
+          видеонаблюдение можно организовать практически через любое устройство имеющее выход в интернет:
+          телефон, планшет, компьютер, даже через некоторые электнонные книги
         </Typography>
       </Grid>
       <Grid item xs={12} sm={6}>
@@ -28,7 +40,7 @@ const MediaSideSection = () => (
     <Typography align="center" color="inherit" variant="title" gutterBottom>
       Видеонаблюдение на компьютере
     </Typography>
-    <Grid container spacing={8} alignItems="center">
+    <Grid container spacing={16} alignItems="center">
       <Grid item xs={12} sm={6}>
         <MacbookVideo/>
       </Grid>
