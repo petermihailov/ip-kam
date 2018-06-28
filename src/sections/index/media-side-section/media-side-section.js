@@ -3,45 +3,44 @@ import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import Section from '../../../components/section/section'
-import MediaSide from '../../../components/media-side/media-side'
 import IphoneVideo from './iphone-video/iphone-video'
 import MacbookVideo from './macbook-screen/macbook-screen'
 
-const s = theme => ({
-  container: {
-    [theme.breakpoints.up('sm')]: {
-      marginTop: 64,
-    },
-  },
-})
+const s = theme => ({})
 
-const Text = () => (
-  <Typography color="inherit" variant="display1">
-    {title}
-  </Typography>
-)
-
-const MediaSideSection = ({ classes, ...props }) => (
+const MediaSideSection = () => (
   <Section>
-    <Grid container spacing={16}>
-      <Grid item xs={12}>
-        <Typography align="center" color="inherit" variant="title">
-          Видеонаблюдение через смартфон
+    <Typography align="center" color="inherit" variant="title" gutterBottom>
+      Видеонаблюдение через смартфон
+    </Typography>
+    <Grid container spacing={8} alignItems="center">
+      <Grid item xs={12} sm={6}>
+        <Typography>
+          Сегодня удаленное видеонаблюдение можно организовать через любое устройство, имеющее выход в интернет, даже
+          через мобильный телефон. Это самое рациональное, эффективное и удобное решение для тех, кто ценит мобильность
+          и комфорт.
         </Typography>
       </Grid>
-      <Grid item xs={12}>
-        <MediaSide Media={<IphoneVideo />} />
+      <Grid item xs={12} sm={6}>
+        <IphoneVideo/>
       </Grid>
-      <Grid item xs={12}>
-        <Typography align="center" color="inherit" variant="title">
-          Видеонаблюдение на компьютере
+    </Grid>
+    <Typography align="center" color="inherit" variant="title" gutterBottom>
+      Видеонаблюдение на компьютере
+    </Typography>
+    <Grid container spacing={8} alignItems="center">
+      <Grid item xs={12} sm={6}>
+        <MacbookVideo/>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Typography>
+          Вы сможете оперативно подключить видеонаблюдение на неограниченном количестве объектов и объединить их в
+          систему с возможностью доступа из любой точки мира. Неважно, требуется ли вам установка нескольких камер в
+          небольшом магазине или нескольких сотен камер в торговой сети.
         </Typography>
-      </Grid>
-      <Grid item xs={12}>
-        <MediaSide Media={<MacbookVideo />} />
       </Grid>
     </Grid>
   </Section>
 )
 
-export default MediaSideSection
+export default withStyles(s)(MediaSideSection)

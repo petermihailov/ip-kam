@@ -15,10 +15,6 @@ import CamsQuestion from './cams-question'
 import BonusQuestion from './bonus-question'
 
 const styles = theme => ({
-  root: {
-    maxWidth: 940,
-    margin: '0 auto',
-  },
   stepper: {
     padding: theme.spacing.unit,
     [theme.breakpoints.up('sm')]: {
@@ -170,7 +166,7 @@ class Survey extends React.Component {
     const isHorizontal = width !== 'xs'
 
     return (
-      <Paper className={classes.root}>
+      <Paper>
         <Stepper
           className={classes.stepper}
           activeStep={activeStep}
