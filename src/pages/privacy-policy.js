@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Helmet from 'react-helmet'
+import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import HeaderBanner from '../components/header-banner/header-banner'
@@ -31,16 +32,16 @@ const PrivacyPolicy = ({ classes }) => (
       title="Политика конфиденциальнсти"
       description="Данная политика конфиденциальности относится к сайту под доменным именем ip-kam.ru. Эта страница содержит сведения о том, какую информацию мы (администрация сайта) или третьи лица могут получать, когда вы пользуетесь нашим сайтом."
     />
-    <div className={classes.container}>
+    <Paper elevation={0} square className={classes.container}>
       <Grid container spacing={16}>
         <Grid item xs={12}>
-          <Typography color="inherit" variant="title" gutterBottom>
+          <Typography variant="title" gutterBottom>
             Данные, собираемые при посещении сайта
           </Typography>
-          <Typography color="inherit" variant="subheading" gutterBottom>
+          <Typography variant="subheading" gutterBottom>
             Персональные данные
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Персональные данные при посещении сайта передаются пользователем
             добровольно, к ним могут относиться: имя, фамилия, отчество, номера
             телефонов, адреса электронной почты, адреса для доставки товаров или
@@ -49,28 +50,28 @@ const PrivacyPolicy = ({ classes }) => (
             пользователь, аккаунты в социальных сетях; поля форм могут
             запрашивать и иные данные.
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Эти данные собираются в целях оказания услуг или продажи товаров,
             связи с пользователем или иной активности пользователя на сайте, а
             также, чтобы отправлять пользователям информацию, которую они
             согласились получать.
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Мы не проверяем достоверность оставляемых данных, однако не
             гарантируем качественного исполнения заказов или обратной связи с
             нами при некорректных данных.
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Данные собираются имеющимися на сайте формами для заполнения
             (например, регистрации, оформления заказа, подписки, оставления
             отзыва, обратной связи и иными).
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Формы, установленные на сайте, могут передавать данные как напрямую
             на сайт, так и на сайты сторонних организаций (скрипты сервисов
             сторонних организаций).
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Также данные могут собираться через технологию cookies (куки) как
             непосредственно сайтом, так и скриптами сервисов сторонних
             организаций. Эти данные собираются автоматически, отправку этих
@@ -78,10 +79,10 @@ const PrivacyPolicy = ({ classes }) => (
             котором открывается сайт.
           </Typography>
 
-          <Typography color="inherit" variant="subheading" gutterBottom>
+          <Typography variant="subheading" gutterBottom>
             Не персональные данные
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Кроме персональных данных при посещении сайта собираются не
             персональные данные, их сбор происходит автоматически веб-сервером,
             на котором расположен сайт, средствами CMS (системы управления
@@ -93,25 +94,25 @@ const PrivacyPolicy = ({ classes }) => (
             (куки), фиксируются посещения, иные данные, собираемые счетчиками
             аналитики сторонних организаций, установленными на сайте.
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Эти данные носят неперсонифицированный характер и направлены на
             улучшение обслуживания клиентов, улучшения удобства использования
             сайта, анализа посещаемости.
           </Typography>
 
-          <Typography color="inherit" variant="title" gutterBottom>
+          <Typography variant="title" gutterBottom>
             Предоставление данных третьим лицам
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Мы не раскрываем личную информацию пользователей компаниям,
             организациям и частным лицам, не связанным с нами. Исключение
             составляют случаи, перечисленные ниже.
           </Typography>
 
-          <Typography color="inherit" variant="title" gutterBottom>
+          <Typography variant="title" gutterBottom>
             Данные пользователей в общем доступе
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Персональные данные пользователя могут публиковаться в общем доступе
             в соответствии с функционалом сайта, например, при оставлении
             отзывов, может публиковаться указанное пользователем имя, такая
@@ -119,19 +120,19 @@ const PrivacyPolicy = ({ classes }) => (
             действиями дает согласие на такую публикацию.
           </Typography>
 
-          <Typography color="inherit" variant="title" gutterBottom>
+          <Typography variant="title" gutterBottom>
             По требованию закона
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Информация может быть раскрыта в целях воспрепятствования
             мошенничеству или иным противоправным действиям; по требованию
             законодательства и в иных случаях, предусмотренных законом.
           </Typography>
 
-          <Typography color="inherit" variant="title" gutterBottom>
+          <Typography variant="title" gutterBottom>
             Для оказания услуг, выполнения обязательств
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Пользователь соглашается с тем, что персональная информация может
             быть передана третьим лицам в целях оказания заказанных на сайте
             услуг, выполнении иных обязательств перед пользователем. К таким
@@ -139,25 +140,25 @@ const PrivacyPolicy = ({ classes }) => (
             службы грузоперевозок и иные.
           </Typography>
 
-          <Typography color="inherit" variant="title" gutterBottom>
+          <Typography variant="title" gutterBottom>
             Сервисам сторонних организаций, установленным на сайте
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             На сайте могут быть установлены формы, собирающие персональную
             информацию других организаций, в этом случае сбор, хранение и защита
             персональной информации пользователя осуществляется сторонними
             организациями в соответствии с их политикой конфиденциальности.
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Сбор, хранение и защита полученной от сторонней организации
             информации осуществляется в соответствии с настоящей политикой
             конфиденциальности.
           </Typography>
 
-          <Typography color="inherit" variant="title" gutterBottom>
+          <Typography variant="title" gutterBottom>
             Как мы защищаем вашу информацию
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Мы принимаем соответствующие меры безопасности по сбору, хранению и
             обработке собранных данных для защиты их от несанкционированного
             доступа, изменения, раскрытия или уничтожения, ограничиваем нашим
@@ -167,10 +168,10 @@ const PrivacyPolicy = ({ classes }) => (
             несанкционированному доступу к нашим системам.
           </Typography>
 
-          <Typography color="inherit" variant="title" gutterBottom>
+          <Typography variant="title" gutterBottom>
             Ваше согласие с этими условиями
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Используя этот сайт, вы выражаете свое согласие с этой политикой
             конфиденциальности. Если вы не согласны с этой политикой,
             пожалуйста, не используйте наш сайт. Ваше дальнейшее использование
@@ -178,10 +179,10 @@ const PrivacyPolicy = ({ classes }) => (
             рассматриваться как ваше согласие с этими изменениями.
           </Typography>
 
-          <Typography color="inherit" variant="title" gutterBottom>
+          <Typography variant="title" gutterBottom>
             Отказ от ответственности
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Политика конфиденциальности не распространяется ни на какие другие
             сайты и не применима к веб-сайтам третьих лиц, которые могут
             содержать упоминание о нашем сайте и с которых могут делаться ссылки
@@ -189,10 +190,10 @@ const PrivacyPolicy = ({ classes }) => (
             Мы не несем ответственности за действия других веб-сайтов.
           </Typography>
 
-          <Typography color="inherit" variant="title" gutterBottom>
+          <Typography variant="title" gutterBottom>
             Изменения в политике конфиденциальности
           </Typography>
-          <Typography color="inherit">
+          <Typography>
             Мы имеем право по своему усмотрению обновлять данную политику
             конфиденциальности в любое время. В этом случае мы опубликуем
             уведомление на главной странице нашего сайта. Мы рекомендуем
@@ -204,7 +205,7 @@ const PrivacyPolicy = ({ classes }) => (
           </Typography>
         </Grid>
       </Grid>
-    </div>
+    </Paper>
   </Fragment>
 )
 

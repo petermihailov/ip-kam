@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
@@ -16,7 +16,7 @@ const s = theme => ({
     backgroundColor: 'rgba(255, 255, 255, 0.12)',
     margin: `${theme.spacing.unit * 2}px auto`,
     maxWidth: '66%',
-  }
+  },
 })
 
 const HeaderBanner = ({ classes, title, description, children }) => (

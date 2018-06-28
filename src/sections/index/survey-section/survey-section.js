@@ -13,7 +13,7 @@ const SurveySection = ({ classes, ...props }) => (
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Survey/>
+        <Survey />
       </Grid>
     </Grid>
   </Section>

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Helmet from 'react-helmet'
+import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import HeaderBanner from '../components/header-banner/header-banner'
@@ -26,25 +27,25 @@ const AboutPage = ({ classes }) => (
       ]}
     />
     <HeaderBanner title="О нас" />
-    <div className={classes.container}>
+    <Paper elevation={0} square className={classes.container}>
       <Grid container spacing={16}>
         <Grid item xs={12}>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Наша команда работает с 2012 года. Мы занимаемся установкой
             современных IP-систем видеонаблюдения, реализующих охранные функции
             и возможности самостоятельного контроля своего бизнеса или частной
             собственности за разумные деньги.
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             За 5 лет работы мы установили и поддерживаем более 450 систем
             безопасности в Москве и Московской области
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Каждый проект проходит 5 стадий контроля качества, сопровождается
             личным менеджером, а все расчёты проводятся персональным инженером
             проекта
           </Typography>
-          <Typography color="inherit">
+          <Typography>
             Мы профессионально устанавливаем аналоговые системы видеонаблюдения.
             Наша деятельность лицензирована, гарантируется 100%-ная прозрачность
             сотрудничества. Предоставляется официальная гарантия, оказывается
@@ -54,7 +55,7 @@ const AboutPage = ({ classes }) => (
           </Typography>
         </Grid>
       </Grid>
-    </div>
+    </Paper>
     <MapSection />
   </Fragment>
 )

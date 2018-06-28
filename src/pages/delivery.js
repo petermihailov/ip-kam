@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Helmet from 'react-helmet'
+import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
@@ -27,33 +28,33 @@ const DeliveryPage = ({ classes }) => (
       ]}
     />
     <HeaderBanner title="Доставка и оплата" />
-    <div className={classes.container}>
+    <Paper elevation={0} square className={classes.container}>
       <Grid container spacing={16}>
         <Grid item xs={12}>
-          <Typography align="center" color="inherit" variant="title">
+          <Typography align="center" variant="title" gutterBottom>
             Варианты оплаты
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Оплата заказов производится при получении товара. Возможна как
             наличная, так и безналичная оплата. Вы оплачиваете заказ, только
             когда он оказывается у вас на пороге.
           </Typography>
 
-          <Typography align="center" color="inherit" variant="title">
+          <Typography align="center" variant="title" gutterBottom>
             Доставка или получение товара
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Доставка по Москве и Московской области практически всей продукции
             возможна уже на следующий день. В отдельных случаях возможна
             доставка в день заказа. Работаем Пн-Пт c 9:00 до 18:00, Cб-Вс с
             10:00 до 17:00.
           </Typography>
-          <Typography color="inherit" paragraph>
+          <Typography paragraph>
             Если мы устанавливаем систему под ключ, доставку осуществляют наши
             специалисты прямо на объект в день установки системы.
           </Typography>
 
-          <Typography color="inherit">
+          <Typography>
             Если вы приобретаете только оборудование, возможны варианты:
           </Typography>
           <List dense>
@@ -77,14 +78,14 @@ const DeliveryPage = ({ classes }) => (
             </ListItem>
           </List>
 
-          <Typography color="inherit">
+          <Typography>
             Мы работаем в полном соответствии с законом и всегда передаем
             покупателям чек, гарантийный талон, а также все иные необходимые
             документы.
           </Typography>
         </Grid>
       </Grid>
-    </div>
+    </Paper>
   </Fragment>
 )
 

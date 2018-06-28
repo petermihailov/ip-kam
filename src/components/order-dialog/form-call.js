@@ -121,7 +121,7 @@ class CallForm extends React.Component {
               autoFocus
             />
             <FormHelperText>
-              Нажимая на кнопку "отправить" вы соглашаетесь с
+              Нажимая на кнопку "отправить" вы соглашаетесь с{' '}
               <Link to="/privacy-policy">политикой конфиденциальности</Link>
             </FormHelperText>
           </FormControl>

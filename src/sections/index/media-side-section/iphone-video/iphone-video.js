@@ -17,7 +17,7 @@ const styles = theme => ({
   },
   iPhoneFrame: {
     display: 'block',
-    position: 'relative'
+    position: 'relative',
   },
 })
 

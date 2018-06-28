@@ -17,7 +17,7 @@ const styles = theme => ({
   },
   macbookFrame: {
     display: 'block',
-    position: 'relative'
+    position: 'relative',
   },
 })
 
