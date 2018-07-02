@@ -1,80 +1,60 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import MaskedInput from 'react-text-mask'
-import FormControl from '@material-ui/core/FormControl'
-import InputLabel from '@material-ui/core/InputLabel'
-import Input from '@material-ui/core/Input'
-import TextField from '@material-ui/core/TextField'
-import FormHelperText from '@material-ui/core/FormHelperText'
+import React, { Component } from 'react'
+import { withStyles } from '@material-ui/core/styles'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import Button from '@material-ui/core/Button'
 
-function TextMaskCustom(props) {
-  const { inputRef, ...other } = props
+import NameQuestion from './name-question'
+import PhoneQuestion from './phone-question'
+import CommentQuestion from './comment-question'
 
-  return (
-    <MaskedInput
-      {...other}
-      ref={inputRef}
-      mask={[
-        '+',
-        '7',
-        ' ',
-        '(',
-        /\d/,
-        /\d/,
-        /\d/,
-        ')',
-        ' ',
-        /\d/,
-        /\d/,
-        /\d/,
-        '-',
-        /\d/,
-        /\d/,
-        /\d/,
-        /\d/,
-      ]}
-      showMask
-    />
-  )
-}
+const styles = theme => ({
+  // dialog: {
+  //   minWidth: 260,
+  // },
+  // [theme.breakpoints.up('sm')]: {
+  //   dialog: {
+  //     minWidth: 460,
+  //   },
+  // }
+})
 
-class CallForm extends React.Component {
+class CallForm extends Component {
   state = {
-    step: 'name',
+    step: 0,
     data: {},
     valid: {},
+    isLastStep: false,
   }
 
-  nextStep = e => {
-    e.preventDefault()
+  steps = ['name', 'phone', 'comment']
 
-    const { onSubmit } = this.props
-    const { step, data } = this.state
+  setLastStep = isLastStep => {
+    const { setPolicyVisibility } = this.props
+    this.setState({ isLastStep }, () => setPolicyVisibility(isLastStep))
+  }
 
-    if (step === 'name') {
-      this.setState({ step: 'phone' })
-    }
-
-    if (step === 'phone') {
-      onSubmit && onSubmit(data)
-    }
+  nextStep = () => {
+    const { step } = this.state
+    this.setState({ step: step + 1 }, () => this.setLastStep(true))
   }
 
   validate(value, name) {
     const { valid } = this.state
 
     switch (name) {
-      case 'name':
-        valid[name] = value.length > 0
-        this.setState({ valid })
+      case this.steps[0]:
+        valid[name] = value.trim().length > 0
+        this.setState({ valid: { ...valid } })
         break
-      case 'phone':
+      case this.steps[1]:
         valid[name] = value.replace(/[-_()\s*]/g, '').length === 12
-        this.setState({ valid })
+        this.setState({ valid: { ...valid } })
+        break
+      default:
+        valid[name] = true
+        this.setState({ valid: { ...valid } })
         break
     }
   }
@@ -87,66 +67,53 @@ class CallForm extends React.Component {
     this.validate(value, name)
   }
 
+  submitHandler = e => {
+    e.preventDefault()
+    const { onSubmit } = this.props
+    const { data, isLastStep } = this.state
+
+    isLastStep ? onSubmit(data) : this.nextStep()
+  }
+
   renderStep() {
     const { step, data } = this.state
 
     switch (step) {
-      case 'name':
+      case 0:
+        return <NameQuestion onChange={this.onChange} />
+      case 1:
         return (
-          <TextField
-            key="name"
-            label="Имя"
-            name="name"
+          <PhoneQuestion
+            value={data.phone}
             onChange={this.onChange}
-            margin="normal"
-            fullWidth
-            required
-            autoFocus
+            setLastStep={this.setLastStep}
           />
         )
-      case 'phone':
-        return (
-          <FormControl margin="normal" fullWidth>
-            <InputLabel htmlFor="phone-mask-input" required focused shrink>
-              Телефон
-            </InputLabel>
-            <Input
-              value={data.phone}
-              name="phone"
-              onChange={this.onChange}
-              id="phone-mask-input"
-              inputComponent={TextMaskCustom}
-              type="tel"
-              required
-              autoFocus
-            />
-            <FormHelperText>
-              Нажимая на кнопку "отправить" вы соглашаетесь с{' '}
-              <Link to="/privacy-policy">политикой конфиденциальности</Link>
-            </FormHelperText>
-          </FormControl>
-        )
+      case 2:
+        return <CommentQuestion onChange={this.onChange} />
     }
   }
 
   render() {
-    const { valid, step } = this.state
+    const { classes } = this.props
+    const { valid, step, isLastStep } = this.state
 
     return (
-      <DialogContent>
+      <DialogContent className={classes.dialog}>
         <DialogContentText id="order-dialog-description">
-          Введите контактную информацию
+          Заполните необходимые поля
         </DialogContentText>
-        <form ref="form" onSubmit={this.nextStep}>
+        <form ref="form" onSubmit={this.submitHandler}>
           {this.renderStep()}
           <DialogActions>
             <Button
-              onClick={this.nextStep}
+              fullWidth
+              onClick={this.submitHandler}
               color="primary"
               variant="contained"
-              disabled={!valid[step]}
+              disabled={!valid[this.steps[step]]}
             >
-              {step === 'phone' ? 'Отправить' : 'Далее'}
+              {isLastStep ? 'Отправить' : 'Далее'}
             </Button>
           </DialogActions>
         </form>
@@ -155,4 +122,4 @@ class CallForm extends React.Component {
   }
 }
 
-export default CallForm
+export default withStyles(styles)(CallForm)
