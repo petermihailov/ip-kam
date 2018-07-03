@@ -4,6 +4,7 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import Form from './form-call'
 import ThankYou from './thank-you'
+import Error from './error'
 import Typography from '@material-ui/core/Typography'
 import Link from 'gatsby-link'
 
@@ -16,7 +17,7 @@ const styles = theme => ({
 
 class OrderDialog extends Component {
   state = {
-    submited: false,
+    submited: true,
     isPolicyVisible: false,
   }
 
@@ -61,10 +62,7 @@ class OrderDialog extends Component {
             ) : null}
           </Fragment>
         ) : (
-          <Fragment>
-            <DialogTitle id="order-dialog-title">Спасибо!</DialogTitle>
-            <ThankYou />
-          </Fragment>
+          <Error />
         )}
       </Dialog>
     )

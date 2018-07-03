@@ -1,0 +1,57 @@
+$duration: 1s;
+$delay: .5s;
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+
+  &.circle {
+    animation: dash $duration ease-in-out;
+  }
+
+  &.line {
+    stroke-dashoffset: 1000px;
+    animation: dash $duration $delay ease-in-out forwards;
+  }
+
+  &.check {
+    stroke-dashoffset: -100;
+    animation: dash-check $duration $delay ease-in-out forwards;
+  }
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900px;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900px;
+  }
+}
