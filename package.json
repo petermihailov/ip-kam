@@ -11,11 +11,12 @@
     "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-sass": "^1.0.26",
     "react-helmet": "^5.2.0",
+    "react-swipeable-views": "^0.12.14",
     "react-text-mask": "^5.4.2"
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --host localhost --port 8000",
     "format": "prettier --write 'src/**/*.js'"
   },
   "devDependencies": {
