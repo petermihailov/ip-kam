@@ -8,7 +8,7 @@ import SwipeableViews from 'react-swipeable-views'
 
 const styles = theme => ({
   root: {
-    maxWidth: 400,
+    maxWidth: 300,
     flexGrow: 1,
     margin: '0 auto',
   },
@@ -21,10 +21,19 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.default,
   },
   img: {
-    height: 255,
-    maxWidth: 400,
+    height: 300,
+    maxWidth: 300,
     overflow: 'hidden',
     width: '100%',
+  },
+  [theme.breakpoints.up('sm')]: {
+    root: {
+      minWidth: 400,
+    },
+    img: {
+      height: 400,
+      maxWidth: 400,
+    },
   },
 })
 
@@ -63,7 +72,7 @@ class ImageSlider extends React.Component {
           enableMouseEvents
         >
           {images.map((src, idx) => (
-            <img key={idx} className={classes.img} src={src} />
+            <img key={idx} className={classes.img} src={src}/>
           ))}
         </SwipeableViews>
         <MobileStepper
@@ -78,7 +87,7 @@ class ImageSlider extends React.Component {
               disabled={activeStep === maxSteps - 1}
             >
               Далее
-              <KeyboardArrowRight />
+              <KeyboardArrowRight/>
             </Button>
           }
           backButton={
@@ -87,7 +96,7 @@ class ImageSlider extends React.Component {
               onClick={this.handleBack}
               disabled={activeStep === 0}
             >
-              <KeyboardArrowLeft />
+              <KeyboardArrowLeft/>
               Назад
             </Button>
           }
