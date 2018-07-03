@@ -24,25 +24,28 @@ const ProjectsPage = ({ classes }) => (
           name: 'description',
           content: 'Примеры наших работ',
         },
-        { name: 'keywords', content: 'видеонаблюдение, готовые проекты, видеомонтаж под ключ' },
+        {
+          name: 'keywords',
+          content: 'видеонаблюдение, готовые проекты, видеомонтаж под ключ',
+        },
       ]}
     />
-    <HeaderBanner title="Наши работы"/>
+    <HeaderBanner title="Наши работы" />
     <div className={classes.container}>
       <Grid container spacing={16}>
-        {
-          projectsData.map(({ title, description, images }) => (
-            <Grid key={title} item xs={12}>
-              <Typography align="center" color="inherit" variant="title">
-                {title}
-              </Typography>
-              <Typography color="inherit" paragraph>
-                {description}
-              </Typography>
-              <ImageSlider images={images.map((src) => withPrefix('/projects/' + src))}/>
-            </Grid>
-          ))
-        }
+        {projectsData.map(({ title, description, images }) => (
+          <Grid key={title} item xs={12}>
+            <Typography align="center" color="inherit" variant="title">
+              {title}
+            </Typography>
+            <Typography color="inherit" paragraph>
+              {description}
+            </Typography>
+            <ImageSlider
+              images={images.map(src => withPrefix('/projects/' + src))}
+            />
+          </Grid>
+        ))}
       </Grid>
     </div>
   </Fragment>
