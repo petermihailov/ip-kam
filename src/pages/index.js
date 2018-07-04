@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 import Helmet from 'react-helmet'
 import HeaderBanner from '../components/header-banner/header-banner'
 import MediaSideSection from '../sections/index/media-side-section/media-side-section'
@@ -11,49 +11,66 @@ import MapSection from '../sections/index/map-section/map-section'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 
-const IndexPage = ({ openForm }) => {
-  return (
-    <Fragment>
-      <Helmet
-        title="IP-Kam - Установка систем видеонаблюдения"
-        meta={[
-          {
-            name: 'description',
-            content:
-              'Устанавливаем современные системы видеонаблюдения для охраны и контроля своей собственности за разумные деньги',
-          },
-          { name: 'keywords', content: 'видеонаблюдение' },
-        ]}
-      />
-      <HeaderBanner
-        title="Проектирование и устанавка систем видеонаблюдения"
-        description="Устанавливаем современные системы видеонаблюдения для охраны и контроля своей собственности за разумные деньги"
-      >
-        <Grid container spacing={16}>
-          <Grid item xs={12} sm={6}>
-            <Button
-              onClick={openForm}
-              variant="contained"
-              color="primary"
-              size="large"
-            >
-              Оставить заявку
-            </Button>
+class IndexPage extends Component {
+  openOrderDialog = () => {
+    const { openForm } = this.props
+    openForm('Новая заявка')
+  }
+
+  openCallDialog = () => {
+    const { openForm } = this.props
+    openForm('Обратный звонок')
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <Helmet
+          title="IP-Kam - Установка систем видеонаблюдения"
+          meta={[
+            {
+              name: 'description',
+              content:
+                'Устанавливаем современные системы видеонаблюдения для охраны и контроля своей собственности за разумные деньги',
+            },
+            { name: 'keywords', content: 'видеонаблюдение' },
+          ]}
+        />
+        <HeaderBanner
+          title="Проектирование и устанавка систем видеонаблюдения"
+          description="Устанавливаем современные системы видеонаблюдения для охраны и контроля своей собственности за разумные деньги"
+        >
+          <Grid container spacing={16}>
+            <Grid item xs={12} sm={6}>
+              <Button
+                onClick={this.openOrderDialog}
+                variant="contained"
+                color="primary"
+                size="large"
+              >
+                Оставить заявку
+              </Button>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Button
+                onClick={this.openCallDialog}
+                variant="contained"
+                size="large"
+              >
+                Заказать звонок
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <Button onClick={openForm} variant="contained" size="large">
-              Заказать звонок
-            </Button>
-          </Grid>
-        </Grid>
-      </HeaderBanner>
-      <MediaSideSection />
-      <SurveySection />
-      <CapabilitiesSection />
-      <TimelineSection />
-      <AdvantageSection />
-      <MapSection />
-    </Fragment>
-  )
+        </HeaderBanner>
+        <MediaSideSection />
+        <SurveySection />
+        <CapabilitiesSection />
+        <TimelineSection />
+        <AdvantageSection />
+        <MapSection />
+      </Fragment>
+    )
+  }
 }
+
 export default IndexPage

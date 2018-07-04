@@ -17,14 +17,17 @@ const theme = createMuiTheme({
 class Layout extends Component {
   state = {
     orderFormIsOpen: false,
+    orderFormTitle: '',
   }
 
   closeForm = () => this.setState({ orderFormIsOpen: false })
-  openForm = () => this.setState({ orderFormIsOpen: true })
+
+  openForm = (orderFormTitle = 'Обратный звонок') =>
+    this.setState({ orderFormTitle, orderFormIsOpen: true })
 
   render() {
     const { children, location } = this.props
-    const { orderFormIsOpen } = this.state
+    const { orderFormIsOpen, orderFormTitle } = this.state
 
     return (
       <MuiThemeProvider theme={theme}>
@@ -32,7 +35,11 @@ class Layout extends Component {
           <Header location={location.pathname} />
           <div>{children({ ...this.props, openForm: this.openForm })}</div>
           <Footer />
-          <OrderDialog onClose={this.closeForm} open={orderFormIsOpen} />
+          <OrderDialog
+            open={orderFormIsOpen}
+            title={orderFormTitle}
+            onClose={this.closeForm}
+          />
         </Fragment>
       </MuiThemeProvider>
     )

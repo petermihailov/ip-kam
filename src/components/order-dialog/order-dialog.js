@@ -39,7 +39,7 @@ class OrderDialog extends Component {
   }
 
   render() {
-    const { classes, open } = this.props
+    const { classes, open, title } = this.props
     const { isPolicyVisible, isSubmited, isError } = this.state
 
     return (
@@ -54,7 +54,7 @@ class OrderDialog extends Component {
           <ThankYou />
         ) : (
           <Fragment>
-            <DialogTitle id="order-dialog-title">Обратный звонок</DialogTitle>
+            <DialogTitle id="order-dialog-title">{title}</DialogTitle>
             <Form
               onError={this.onError}
               onSubmit={this.onSubmit}
