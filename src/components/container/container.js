@@ -6,6 +6,8 @@ import Paper from '@material-ui/core/Paper'
 const s = theme => ({
   root: {
     position: 'relative',
+  },
+  container: {
     maxWidth: theme.breakpoints.values.md,
     margin: '0 auto',
     padding: theme.spacing.unit * 2,
@@ -17,21 +19,32 @@ const s = theme => ({
 })
 
 const Container = ({
-  classes,
-  className,
-  component,
-  elevation = 0,
-  children,
-  banner,
-  ...props
-}) => (
+                     classes,
+                     className,
+                     component,
+                     elevation = 0,
+                     children,
+                     banner,
+                     ...props
+                   }) => (
   <Paper
     component={component}
     elevation={elevation}
-    className={cn(className, classes.root, { [classes.isBanner]: banner })}
+    className={cn(
+      className,
+      classes.root,
+      {
+        [classes.container]: !banner,
+        [classes.isBanner]: banner,
+      },
+    )}
     {...props}
   >
-    {children}
+    {
+      banner
+        ? <div className={cn(classes.root, { [classes.container]: banner })}>{children}</div>
+        : children
+    }
   </Paper>
 )
 
