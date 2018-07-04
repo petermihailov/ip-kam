@@ -14,6 +14,10 @@ const s = theme => ({
     margin: `${theme.spacing.unit * 2}px auto`,
     maxWidth: '66%',
   },
+  subheading: {
+    maxWidth: theme.breakpoints.values.sm,
+    margin: '0 auto',
+  },
 })
 
 const HeaderBanner = ({ classes, title, description, children }) => (
@@ -25,8 +29,9 @@ const HeaderBanner = ({ classes, title, description, children }) => (
     ) : null}
     {description ? (
       <Fragment>
-        <Divider className={classes.divider} />
+        <Divider className={classes.divider}/>
         <Typography
+          className={classes.subheading}
           color="inherit"
           align="center"
           variant="subheading"

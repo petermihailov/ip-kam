@@ -35,6 +35,7 @@ const Container = ({
       [classes.container]: !banner,
       [classes.isBanner]: banner,
     })}
+    square={banner}
     {...props}
   >
     {banner ? (
