@@ -3,6 +3,7 @@ import { withPrefix } from 'gatsby-link'
 import { withStyles } from '@material-ui/core/styles'
 import Helmet from 'react-helmet'
 import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import HeaderBanner from '../components/header-banner/header-banner'
 import ImageSlider from '../components/image-slider/image-slider'
@@ -30,15 +31,15 @@ const ProjectsPage = ({ classes }) => (
         },
       ]}
     />
-    <HeaderBanner title="Наши работы" />
-    <div className={classes.container}>
+    <HeaderBanner title="Наши работы"/>
+    <Paper elevation={0} square className={classes.container}>
       <Grid container spacing={16}>
         {projectsData.map(({ title, description, images }) => (
           <Grid key={title} item xs={12}>
-            <Typography align="center" color="inherit" variant="title">
+            <Typography align="center" variant="title">
               {title}
             </Typography>
-            <Typography color="inherit" paragraph>
+            <Typography paragraph>
               {description}
             </Typography>
             <ImageSlider
@@ -47,7 +48,7 @@ const ProjectsPage = ({ classes }) => (
           </Grid>
         ))}
       </Grid>
-    </div>
+    </Paper>
   </Fragment>
 )
 
