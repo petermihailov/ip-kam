@@ -11,6 +11,7 @@ const s = theme => ({
     maxWidth: theme.breakpoints.values.md,
     margin: '0 auto',
     padding: theme.spacing.unit * 2,
+    overflow: 'hidden',
   },
   isBanner: {
     color: '#fff',
@@ -19,32 +20,30 @@ const s = theme => ({
 })
 
 const Container = ({
-                     classes,
-                     className,
-                     component,
-                     elevation = 0,
-                     children,
-                     banner,
-                     ...props
-                   }) => (
+  classes,
+  className,
+  component,
+  elevation = 0,
+  children,
+  banner,
+  ...props
+}) => (
   <Paper
     component={component}
     elevation={elevation}
-    className={cn(
-      className,
-      classes.root,
-      {
-        [classes.container]: !banner,
-        [classes.isBanner]: banner,
-      },
-    )}
+    className={cn(className, classes.root, {
+      [classes.container]: !banner,
+      [classes.isBanner]: banner,
+    })}
     {...props}
   >
-    {
-      banner
-        ? <div className={cn(classes.root, { [classes.container]: banner })}>{children}</div>
-        : children
-    }
+    {banner ? (
+      <div className={cn(classes.root, { [classes.container]: banner })}>
+        {children}
+      </div>
+    ) : (
+      children
+    )}
   </Paper>
 )
 
