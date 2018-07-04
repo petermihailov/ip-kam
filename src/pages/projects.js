@@ -31,7 +31,7 @@ const ProjectsPage = ({ classes }) => (
         },
       ]}
     />
-    <HeaderBanner title="Наши работы"/>
+    <HeaderBanner title="Наши работы" />
     <Paper elevation={0} square className={classes.container}>
       <Grid container spacing={16}>
         {projectsData.map(({ title, description, images }) => (
@@ -39,9 +39,7 @@ const ProjectsPage = ({ classes }) => (
             <Typography align="center" variant="title">
               {title}
             </Typography>
-            <Typography paragraph>
-              {description}
-            </Typography>
+            <Typography paragraph>{description}</Typography>
             <ImageSlider
               images={images.map(src => withPrefix('/projects/' + src))}
             />

@@ -4,7 +4,10 @@ import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 
 const s = theme => ({
-  section: {
+  root: {
+    position: 'relative',
+    maxWidth: theme.breakpoints.values.md,
+    margin: '0 auto',
     padding: theme.spacing.unit * 2,
   },
   isBanner: {
@@ -13,16 +16,23 @@ const s = theme => ({
   },
 })
 
-const Section = ({ classes, children, banner = false, ...props }) => (
+const Container = ({
+  classes,
+  className,
+  component,
+  elevation = 0,
+  children,
+  banner,
+  ...props
+}) => (
   <Paper
-    component="section"
-    elevation={0}
-    square
-    className={cn(classes.section, { [classes.isBanner]: banner })}
+    component={component}
+    elevation={elevation}
+    className={cn(className, classes.root, { [classes.isBanner]: banner })}
     {...props}
   >
     {children}
   </Paper>
 )
 
-export default withStyles(s)(Section)
+export default withStyles(s)(Container)

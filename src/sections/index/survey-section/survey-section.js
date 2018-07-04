@@ -1,22 +1,15 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
-import Section from '../../../components/section/section'
+import Container from '../../../components/container/container'
 import Survey from '../../../components/survey/survey'
 
 const SurveySection = ({ classes, ...props }) => (
-  <Section>
-    <Grid container spacing={8}>
-      <Grid item xs={12}>
-        <Typography align="center" variant="title">
-          Пройдите тест и получите смету на установку видеонаблюдения
-        </Typography>
-      </Grid>
-      <Grid item xs={12}>
-        <Survey />
-      </Grid>
-    </Grid>
-  </Section>
+  <Container component="section" elevation={1}>
+    <Typography align="center" variant="title">
+      Пройдите тест и получите смету на установку видеонаблюдения
+    </Typography>
+    <Survey />
+  </Container>
 )
 
 export default SurveySection

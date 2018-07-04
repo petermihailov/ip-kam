@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
-import Section from '../../../components/section/section'
+import Container from '../../../components/container/container'
 
 import DirectionsCarIcon from '@material-ui/icons/DirectionsCar'
 import AccessTimeIcon from '@material-ui/icons/AccessTime'
@@ -32,7 +32,7 @@ const data = [
 ]
 
 const AdvantagesSection = ({ classes, ...props }) => (
-  <Section banner>
+  <Container component="section" banner>
     <Grid container spacing={16}>
       <Grid item xs={12}>
         <Typography align="center" color="inherit" variant="title">
@@ -50,7 +50,7 @@ const AdvantagesSection = ({ classes, ...props }) => (
         </List>
       </Grid>
     </Grid>
-  </Section>
+  </Container>
 )
 
 export default AdvantagesSection

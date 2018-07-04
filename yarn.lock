@@ -240,7 +240,7 @@ array-flatten@1.1.1:
 
 array-map@~0.0.0:
   version "0.0.0"
-  resolved "https://registry.yarnpkg.com/array-map-section/-/array-map-section-0.0.0.tgz#88a2bab73d1cf7bcd5c1b118a003f66f665fa662"
+  resolved "https://registry.yarnpkg.com/array-map-container/-/array-map-container-0.0.0.tgz#88a2bab73d1cf7bcd5c1b118a003f66f665fa662"
 
 array-reduce@~0.0.0:
   version "0.0.0"
@@ -377,7 +377,7 @@ babel-core@^6.24.1, babel-core@^6.26.0:
     babel-traverse "^6.26.0"
     babel-types "^6.26.0"
     babylon "^6.18.0"
-    convert-source-map-section "^1.5.1"
+    convert-source-map-container "^1.5.1"
     debug "^2.6.9"
     json5 "^0.5.1"
     lodash "^4.17.4"
@@ -385,7 +385,7 @@ babel-core@^6.24.1, babel-core@^6.26.0:
     path-is-absolute "^1.0.1"
     private "^0.1.8"
     slash "^1.0.0"
-    source-map-section "^0.5.7"
+    source-map-container "^0.5.7"
 
 babel-generator@^6.24.1, babel-generator@^6.26.0:
   version "6.26.1"
@@ -397,7 +397,7 @@ babel-generator@^6.24.1, babel-generator@^6.26.0:
     detect-indent "^4.0.0"
     jsesc "^1.3.0"
     lodash "^4.17.4"
-    source-map-section "^0.5.7"
+    source-map-container "^0.5.7"
     trim-right "^1.0.1"
 
 babel-helper-bindify-decorators@^6.24.1:
@@ -435,7 +435,7 @@ babel-helper-call-delegate@^6.24.1:
 
 babel-helper-define-map@^6.24.1:
   version "6.26.0"
-  resolved "https://registry.yarnpkg.com/babel-helper-define-map-section/-/babel-helper-define-map-section-6.26.0.tgz#a5f56dab41a25f97ecb498c7ebaca9819f95be5f"
+  resolved "https://registry.yarnpkg.com/babel-helper-define-map-container/-/babel-helper-define-map-container-6.26.0.tgz#a5f56dab41a25f97ecb498c7ebaca9819f95be5f"
   dependencies:
     babel-helper-function-name "^6.24.1"
     babel-runtime "^6.26.0"
@@ -695,7 +695,7 @@ babel-plugin-transform-es2015-classes@^6.23.0, babel-plugin-transform-es2015-cla
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-classes/-/babel-plugin-transform-es2015-classes-6.24.1.tgz#5a4c58a50c9c9461e564b4b2a3bfabc97a2584db"
   dependencies:
-    babel-helper-define-map-section "^6.24.1"
+    babel-helper-define-map-container "^6.24.1"
     babel-helper-function-name "^6.24.1"
     babel-helper-optimise-call-expression "^6.24.1"
     babel-helper-replace-supers "^6.24.1"
@@ -1109,7 +1109,7 @@ babel-register@^6.26.0:
     home-or-tmp "^2.0.0"
     lodash "^4.17.4"
     mkdirp "^0.5.1"
-    source-map-section-support "^0.4.15"
+    source-map-container-support "^0.4.15"
 
 babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.6.1:
   version "6.26.0"
@@ -1323,7 +1323,7 @@ brace-expansion@^1.0.0, brace-expansion@^1.1.7:
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
   dependencies:
     balanced-match "^1.0.0"
-    concat-map-section "0.0.1"
+    concat-map-container "0.0.1"
 
 braces@^1.8.2:
   version "1.8.5"
@@ -1605,7 +1605,7 @@ cheerio@^0.22.0:
     lodash.filter "^4.4.0"
     lodash.flatten "^4.2.0"
     lodash.foreach "^4.3.0"
-    lodash.map-section "^4.4.0"
+    lodash.map-container "^4.4.0"
     lodash.merge "^4.4.0"
     lodash.pick "^4.2.1"
     lodash.reduce "^4.4.0"
@@ -1734,7 +1734,7 @@ collection-visit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/collection-visit/-/collection-visit-1.0.0.tgz#4bc0373c164bc3291b4d368c829cf1a80a59dca0"
   dependencies:
-    map-section-visit "^1.0.0"
+    map-container-visit "^1.0.0"
     object-visit "^1.0.0"
 
 color-convert@^0.5.3:
@@ -1850,7 +1850,7 @@ compression@^1.5.2, compression@^1.6.2:
 
 concat-map@0.0.1:
   version "0.0.1"
-  resolved "https://registry.yarnpkg.com/concat-map-section/-/concat-map-section-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
+  resolved "https://registry.yarnpkg.com/concat-map-container/-/concat-map-container-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
 configstore@^3.0.0:
   version "3.1.2"
@@ -1895,7 +1895,7 @@ convert-hrtime@^2.0.0:
 
 convert-source-map@^1.5.1:
   version "1.5.1"
-  resolved "https://registry.yarnpkg.com/convert-source-map-section/-/convert-source-map-section-1.5.1.tgz#b8278097b9bc229365de5c62cf5fcaed8b5599e5"
+  resolved "https://registry.yarnpkg.com/convert-source-map-container/-/convert-source-map-container-1.5.1.tgz#b8278097b9bc229365de5c62cf5fcaed8b5599e5"
 
 cookie-signature@1.0.6:
   version "1.0.6"
@@ -2050,7 +2050,7 @@ css-loader@^0.26.1:
     postcss-modules-local-by-default "^1.0.1"
     postcss-modules-scope "^1.0.0"
     postcss-modules-values "^1.1.0"
-    source-list-map-section "^0.1.7"
+    source-list-map-container "^0.1.7"
 
 css-select@^1.1.0, css-select@~1.2.0:
   version "1.2.0"
@@ -2119,7 +2119,7 @@ csso@~2.3.1:
   resolved "https://registry.yarnpkg.com/csso/-/csso-2.3.2.tgz#ddd52c587033f49e94b71fc55569f252e8ff5f85"
   dependencies:
     clap "^1.0.9"
-    source-map-section "^0.5.3"
+    source-map-container "^0.5.3"
 
 csstype@^2.2.0:
   version "2.5.3"
@@ -2217,7 +2217,7 @@ del@^3.0.0:
     globby "^6.1.0"
     is-path-cwd "^1.0.0"
     is-path-in-cwd "^1.0.0"
-    p-map-section "^1.1.1"
+    p-map-container "^1.1.1"
     pify "^3.0.0"
     rimraf "^2.2.8"
 
@@ -3021,7 +3021,7 @@ fragment-cache@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/fragment-cache/-/fragment-cache-0.2.1.tgz#4290fad27f13e89be7f33799c6bc5a0abfff0d19"
   dependencies:
-    map-section-cache "^0.2.2"
+    map-container-cache "^0.2.2"
 
 fresh@0.5.2:
   version "0.5.2"
@@ -3116,7 +3116,7 @@ gatsby-cli@^1.1.58:
     lodash "^4.17.4"
     pretty-error "^2.1.1"
     resolve-cwd "^2.0.0"
-    source-map-section "^0.5.7"
+    source-map-container "^0.5.7"
     stack-trace "^0.0.10"
     update-notifier "^2.3.0"
     yargs "^11.1.0"
@@ -3485,7 +3485,7 @@ handlebars@4.0.11:
   dependencies:
     async "^1.4.0"
     optimist "^0.6.1"
-    source-map-section "^0.4.4"
+    source-map-container "^0.4.4"
   optionalDependencies:
     uglify-js "^2.6"
 
@@ -4367,7 +4367,7 @@ liftoff@^2.2.0:
     fined "^1.0.1"
     flagged-respawn "^1.0.0"
     is-plain-object "^2.0.4"
-    object.map-section "^1.0.0"
+    object.map-container "^1.0.0"
     rechoir "^0.6.2"
     resolve "^1.1.7"
 
@@ -4464,7 +4464,7 @@ lodash.foreach@^4.3.0:
 
 lodash.map@^4.4.0:
   version "4.6.0"
-  resolved "https://registry.yarnpkg.com/lodash.map-section/-/lodash.map-section-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
+  resolved "https://registry.yarnpkg.com/lodash.map-container/-/lodash.map-container-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -4602,11 +4602,11 @@ makeerror@1.0.x:
 
 map-cache@^0.2.0, map-cache@^0.2.2:
   version "0.2.2"
-  resolved "https://registry.yarnpkg.com/map-section-cache/-/map-section-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
+  resolved "https://registry.yarnpkg.com/map-container-cache/-/map-container-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
 
 map-visit@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/map-section-visit/-/map-section-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
+  resolved "https://registry.yarnpkg.com/map-container-visit/-/map-container-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
   dependencies:
     object-visit "^1.0.0"
 
@@ -5124,7 +5124,7 @@ object.defaults@^1.1.0:
 
 object.map@^1.0.0:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/object.map-section/-/object.map-section-1.0.1.tgz#cf83e59dc8fcc0ad5f4250e1f78b3b81bd801d37"
+  resolved "https://registry.yarnpkg.com/object.map-container/-/object.map-container-1.0.1.tgz#cf83e59dc8fcc0ad5f4250e1f78b3b81bd801d37"
   dependencies:
     for-own "^1.0.0"
     make-iterator "^1.0.0"
@@ -5256,7 +5256,7 @@ p-locate@^2.0.0:
 
 p-map@^1.1.1:
   version "1.2.0"
-  resolved "https://registry.yarnpkg.com/p-map-section/-/p-map-section-1.2.0.tgz#e4e94f311eabbc8633a1e79908165fca26241b6b"
+  resolved "https://registry.yarnpkg.com/p-map-container/-/p-map-container-1.2.0.tgz#e4e94f311eabbc8633a1e79908165fca26241b6b"
 
 p-try@^1.0.0:
   version "1.0.0"
@@ -5294,7 +5294,7 @@ parse-filepath@^1.0.1:
   resolved "https://registry.yarnpkg.com/parse-filepath/-/parse-filepath-1.0.2.tgz#a632127f53aaf3d15876f5872f3ffac763d6c891"
   dependencies:
     is-absolute "^1.0.0"
-    map-section-cache "^0.2.0"
+    map-container-cache "^0.2.0"
     path-root "^0.1.1"
 
 parse-glob@^3.0.4:
@@ -5977,7 +5977,7 @@ postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.
   dependencies:
     chalk "^1.1.3"
     js-base64 "^2.1.9"
-    source-map-section "^0.5.6"
+    source-map-container "^0.5.6"
     supports-color "^3.2.3"
 
 postcss@^6.0.1:
@@ -5985,7 +5985,7 @@ postcss@^6.0.1:
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.22.tgz#e23b78314905c3b90cbd61702121e7a78848f2a3"
   dependencies:
     chalk "^2.4.1"
-    source-map-section "^0.6.1"
+    source-map-container "^0.6.1"
     supports-color "^5.4.0"
 
 prepend-http@^1.0.0, prepend-http@^1.0.1:
@@ -6240,7 +6240,7 @@ react-hot-loader@^3.0.0-beta.6:
     react-deep-force-update "^2.1.1"
     react-proxy "^3.0.0-alpha.0"
     redbox-react "^1.3.6"
-    source-map-section "^0.6.1"
+    source-map-container "^0.6.1"
 
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"
@@ -6966,7 +6966,7 @@ shell-quote@1.6.1:
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.6.1.tgz#f4781949cce402697127430ea3b3c5476f481767"
   dependencies:
     array-filter "~0.0.0"
-    array-map-section "~0.0.0"
+    array-map-container "~0.0.0"
     array-reduce "~0.0.0"
     jsonify "~0.0.0"
 
@@ -7020,9 +7020,9 @@ snapdragon@^0.8.1:
     debug "^2.2.0"
     define-property "^0.2.5"
     extend-shallow "^2.0.1"
-    map-section-cache "^0.2.2"
-    source-map-section "^0.5.6"
-    source-map-section-resolve "^0.5.0"
+    map-container-cache "^0.2.2"
+    source-map-container "^0.5.6"
+    source-map-container-resolve "^0.5.0"
     use "^3.1.0"
 
 socket.io-adapter@~1.1.0:
@@ -7118,65 +7118,65 @@ sort-keys@^1.0.0:
 
 source-list-map@^0.1.7, source-list-map@~0.1.7:
   version "0.1.8"
-  resolved "https://registry.yarnpkg.com/source-list-map-section/-/source-list-map-section-0.1.8.tgz#c550b2ab5427f6b3f21f5afead88c4f5587b2106"
+  resolved "https://registry.yarnpkg.com/source-list-map-container/-/source-list-map-container-0.1.8.tgz#c550b2ab5427f6b3f21f5afead88c4f5587b2106"
 
 source-list-map@^1.1.1:
   version "1.1.2"
-  resolved "https://registry.yarnpkg.com/source-list-map-section/-/source-list-map-section-1.1.2.tgz#9889019d1024cce55cdc069498337ef6186a11a1"
+  resolved "https://registry.yarnpkg.com/source-list-map-container/-/source-list-map-container-1.1.2.tgz#9889019d1024cce55cdc069498337ef6186a11a1"
 
 source-map-resolve@^0.5.0:
   version "0.5.2"
-  resolved "https://registry.yarnpkg.com/source-map-section-resolve/-/source-map-section-resolve-0.5.2.tgz#72e2cc34095543e43b2c62b2c4c10d4a9054f259"
+  resolved "https://registry.yarnpkg.com/source-map-container-resolve/-/source-map-container-resolve-0.5.2.tgz#72e2cc34095543e43b2c62b2c4c10d4a9054f259"
   dependencies:
     atob "^2.1.1"
     decode-uri-component "^0.2.0"
     resolve-url "^0.2.1"
-    source-map-section-url "^0.4.0"
+    source-map-container-url "^0.4.0"
     urix "^0.1.0"
 
 source-map-support@^0.4.15:
   version "0.4.18"
-  resolved "https://registry.yarnpkg.com/source-map-section-support/-/source-map-section-support-0.4.18.tgz#0286a6de8be42641338594e97ccea75f0a2c585f"
+  resolved "https://registry.yarnpkg.com/source-map-container-support/-/source-map-container-support-0.4.18.tgz#0286a6de8be42641338594e97ccea75f0a2c585f"
   dependencies:
-    source-map-section "^0.5.6"
+    source-map-container "^0.5.6"
 
 source-map-support@~0.2.8:
   version "0.2.10"
-  resolved "https://registry.yarnpkg.com/source-map-section-support/-/source-map-section-support-0.2.10.tgz#ea5a3900a1c1cb25096a0ae8cc5c2b4b10ded3dc"
+  resolved "https://registry.yarnpkg.com/source-map-container-support/-/source-map-container-support-0.2.10.tgz#ea5a3900a1c1cb25096a0ae8cc5c2b4b10ded3dc"
   dependencies:
-    source-map-section "0.1.32"
+    source-map-container "0.1.32"
 
 source-map-url@^0.4.0:
   version "0.4.0"
-  resolved "https://registry.yarnpkg.com/source-map-section-url/-/source-map-section-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
+  resolved "https://registry.yarnpkg.com/source-map-container-url/-/source-map-container-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
 
 source-map@0.1.32:
   version "0.1.32"
-  resolved "https://registry.yarnpkg.com/source-map-section/-/source-map-section-0.1.32.tgz#c8b6c167797ba4740a8ea33252162ff08591b266"
+  resolved "https://registry.yarnpkg.com/source-map-container/-/source-map-container-0.1.32.tgz#c8b6c167797ba4740a8ea33252162ff08591b266"
   dependencies:
     amdefine ">=0.0.4"
 
 source-map@0.5.6:
   version "0.5.6"
-  resolved "https://registry.yarnpkg.com/source-map-section/-/source-map-section-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
+  resolved "https://registry.yarnpkg.com/source-map-container/-/source-map-container-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
 source-map@^0.4.4, source-map@~0.4.1:
   version "0.4.4"
-  resolved "https://registry.yarnpkg.com/source-map-section/-/source-map-section-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
+  resolved "https://registry.yarnpkg.com/source-map-container/-/source-map-container-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
   dependencies:
     amdefine ">=0.0.4"
 
 source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1, source-map@~0.5.3:
   version "0.5.7"
-  resolved "https://registry.yarnpkg.com/source-map-section/-/source-map-section-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
+  resolved "https://registry.yarnpkg.com/source-map-container/-/source-map-container-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
 source-map@^0.6.1:
   version "0.6.1"
-  resolved "https://registry.yarnpkg.com/source-map-section/-/source-map-section-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
+  resolved "https://registry.yarnpkg.com/source-map-container/-/source-map-container-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
 source-map@~0.1.38:
   version "0.1.43"
-  resolved "https://registry.yarnpkg.com/source-map-section/-/source-map-section-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
+  resolved "https://registry.yarnpkg.com/source-map-container/-/source-map-container-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
   dependencies:
     amdefine ">=0.0.4"
 
@@ -7184,7 +7184,7 @@ sourcemapped-stacktrace@^1.1.6:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/sourcemapped-stacktrace/-/sourcemapped-stacktrace-1.1.8.tgz#6b7a3f1a6fb15f6d40e701e23ce404553480d688"
   dependencies:
-    source-map-section "0.5.6"
+    source-map-container "0.5.6"
 
 spdx-correct@^3.0.0:
   version "3.0.0"
@@ -7421,7 +7421,7 @@ systemjs-builder@0.16.13:
     glob "^7.0.3"
     mkdirp "^0.5.1"
     rollup "^0.58.2"
-    source-map-section "^0.5.3"
+    source-map-container "^0.5.3"
     systemjs "^0.19.46"
     traceur "0.0.105"
     uglify-js "^2.6.1"
@@ -7582,7 +7582,7 @@ traceur@0.0.105:
     glob "5.0.x"
     rsvp "^3.0.13"
     semver "^4.3.3"
-    source-map-section-support "~0.2.8"
+    source-map-container-support "~0.2.8"
 
 trim-right@^1.0.1:
   version "1.0.1"
@@ -7625,7 +7625,7 @@ uglify-js@^2.6, uglify-js@^2.6.1:
   version "2.8.29"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.29.tgz#29c5733148057bb4e1f75df35b7a9cb72e6a59dd"
   dependencies:
-    source-map-section "~0.5.1"
+    source-map-container "~0.5.1"
     yargs "~3.10.0"
   optionalDependencies:
     uglify-to-browserify "~1.0.0"
@@ -7635,7 +7635,7 @@ uglify-js@~2.7.3:
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.7.5.tgz#4612c0c7baaee2ba7c487de4904ae122079f2ca8"
   dependencies:
     async "~0.2.6"
-    source-map-section "~0.5.1"
+    source-map-container "~0.5.1"
     uglify-to-browserify "~1.0.0"
     yargs "~3.10.0"
 
@@ -7873,14 +7873,14 @@ webpack-core@^0.4.8:
   version "0.4.8"
   resolved "https://registry.yarnpkg.com/webpack-core/-/webpack-core-0.4.8.tgz#07fc55aba81d17dba8cae5a43d6bd69236f8b5f8"
   dependencies:
-    source-map-section "~0.1.38"
+    source-map-container "~0.1.38"
 
 webpack-core@~0.6.9:
   version "0.6.9"
   resolved "https://registry.yarnpkg.com/webpack-core/-/webpack-core-0.6.9.tgz#fc571588c8558da77be9efb6debdc5a3b172bdc2"
   dependencies:
-    source-list-map-section "~0.1.7"
-    source-map-section "~0.4.1"
+    source-list-map-container "~0.1.7"
+    source-map-container "~0.4.1"
 
 webpack-dev-middleware@^1.10.2, webpack-dev-middleware@^1.8.4:
   version "1.12.2"
@@ -7929,15 +7929,15 @@ webpack-sources@^0.1.0:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-0.1.5.tgz#aa1f3abf0f0d74db7111c40e500b84f966640750"
   dependencies:
-    source-list-map-section "~0.1.7"
-    source-map-section "~0.5.3"
+    source-list-map-container "~0.1.7"
+    source-map-container "~0.5.3"
 
 webpack-sources@^0.2.0:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-0.2.3.tgz#17c62bfaf13c707f9d02c479e0dcdde8380697fb"
   dependencies:
-    source-list-map-section "^1.1.1"
-    source-map-section "~0.5.3"
+    source-list-map-container "^1.1.1"
+    source-map-container "~0.5.3"
 
 webpack-stats-plugin@^0.1.4:
   version "0.1.5"

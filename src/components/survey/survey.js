@@ -22,13 +22,11 @@ const styles = theme => ({
     },
   },
   container: {
-    padding: theme.spacing.unit * 2,
     [theme.breakpoints.up('md')]: {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
       minHeight: 170,
-      padding: theme.spacing.unit * 4,
       paddingTop: 0,
     },
   },
@@ -166,7 +164,7 @@ class Survey extends React.Component {
     const isHorizontal = width !== 'xs'
 
     return (
-      <Paper>
+      <Paper elevation={0}>
         <Stepper
           className={classes.stepper}
           activeStep={activeStep}
@@ -185,7 +183,6 @@ class Survey extends React.Component {
             )
           })}
         </Stepper>
-
         {activeStep === steps.length ? (
           <Paper square elevation={0} className={classes.container}>
             <Typography>

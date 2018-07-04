@@ -2,10 +2,10 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
-import Section from '../../../components/section/section'
+import Container from '../../../components/container/container'
 
 const ProductsMobileSection = () => (
-  <Section>
+  <Container component="section">
     <Grid container spacing={16}>
       <Grid item xs={12}>
         <Typography align="center" variant="title">
@@ -19,7 +19,7 @@ const ProductsMobileSection = () => (
         </Typography>
       </Grid>
     </Grid>
-  </Section>
+  </Container>
 )
 
 export default ProductsMobileSection

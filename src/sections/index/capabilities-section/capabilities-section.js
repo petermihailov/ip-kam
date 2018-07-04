@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
-import Section from '../../../components/section/section'
+import Container from '../../../components/container/container'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 
 const data = [
@@ -21,7 +21,7 @@ const data = [
 ]
 
 const CapabilitiesSection = ({ classes, ...props }) => (
-  <Section banner>
+  <Container component="section" banner>
     <Grid container spacing={16}>
       <Grid item xs={12}>
         <Typography align="center" color="inherit" variant="title">
@@ -39,7 +39,7 @@ const CapabilitiesSection = ({ classes, ...props }) => (
         </List>
       </Grid>
     </Grid>
-  </Section>
+  </Container>
 )
 
 export default CapabilitiesSection

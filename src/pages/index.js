@@ -7,6 +7,7 @@ import CapabilitiesSection from '../sections/index/capabilities-section/capabili
 import TimelineSection from '../sections/index/timeline-section/timeline-section'
 import AdvantageSection from '../sections/index/advantages-section/advantages-section'
 import SurveySection from '../sections/index/survey-section/survey-section'
+import ValuePropositionSection from '../sections/index/value-proposition-section/value-proposition-section'
 import MapSection from '../sections/index/map-section/map-section'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
@@ -62,6 +63,7 @@ class IndexPage extends Component {
             </Grid>
           </Grid>
         </HeaderBanner>
+        <ValuePropositionSection />
         <MediaSideSection />
         <SurveySection />
         <CapabilitiesSection />

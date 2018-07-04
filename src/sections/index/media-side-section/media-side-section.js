@@ -2,7 +2,7 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
-import Section from '../../../components/section/section'
+import Container from '../../../components/container/container'
 import IphoneVideo from './iphone-video/iphone-video'
 import MacbookVideo from './macbook-screen/macbook-screen'
 
@@ -21,7 +21,7 @@ const s = theme => ({
 })
 
 const MediaSideSection = ({ classes }) => (
-  <Section>
+  <Container component="section">
     <Typography align="center" variant="title" gutterBottom>
       Видеонаблюдение через смартфон
     </Typography>
@@ -59,7 +59,7 @@ const MediaSideSection = ({ classes }) => (
         </Typography>
       </Grid>
     </Grid>
-  </Section>
+  </Container>
 )
 
 export default withStyles(s)(MediaSideSection)

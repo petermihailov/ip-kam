@@ -1,6 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import Section from '../../../components/section/section'
+import Container from '../../../components/container/container'
 import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
 import StepLabel from '@material-ui/core/StepLabel'
@@ -30,7 +30,7 @@ class TimelineSection extends React.Component {
     const { classes } = this.props
 
     return (
-      <Section>
+      <Container component="section">
         <Stepper orientation="vertical">
           {steps.map((label, idx) => {
             return (
@@ -43,7 +43,7 @@ class TimelineSection extends React.Component {
             )
           })}
         </Stepper>
-      </Section>
+      </Container>
     )
   }
 }
