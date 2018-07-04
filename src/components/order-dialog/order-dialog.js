@@ -17,7 +17,8 @@ const styles = theme => ({
 
 class OrderDialog extends Component {
   state = {
-    submited: true,
+    isSubmited: false,
+    isError: false,
     isPolicyVisible: false,
   }
 
@@ -25,8 +26,10 @@ class OrderDialog extends Component {
 
   onSubmit = data => {
     alert(JSON.stringify(data))
-    this.setState({ submited: true })
+    this.setState({ isSubmited: true })
   }
+
+  onError = () => this.setState({ isError: true })
 
   onClose = () => {
     const { onClose } = this.props
@@ -37,7 +40,7 @@ class OrderDialog extends Component {
 
   render() {
     const { classes, open } = this.props
-    const { isPolicyVisible, submited } = this.state
+    const { isPolicyVisible, isSubmited, isError } = this.state
 
     return (
       <Dialog
@@ -45,24 +48,27 @@ class OrderDialog extends Component {
         onClose={this.onClose}
         aria-labelledby="order-dialog-title"
       >
-        {!submited ? (
+        {isError ? (
+          <Error />
+        ) : isSubmited ? (
+          <ThankYou />
+        ) : (
           <Fragment>
             <DialogTitle id="order-dialog-title">Обратный звонок</DialogTitle>
             <Form
+              onError={this.onError}
               onSubmit={this.onSubmit}
               setPolicyVisibility={this.setPolicyVisibility}
             />
-            {isPolicyVisible ? (
+            {isPolicyVisible && (
               <Typography variant="caption" className={classes.policy}>
                 Нажимая на кнопку "отправить" вы соглашаетесь с{' '}
                 <Link to="/privacy-policy" target="_blank">
                   политикой конфиденциальности
                 </Link>
               </Typography>
-            ) : null}
+            )}
           </Fragment>
-        ) : (
-          <Error />
         )}
       </Dialog>
     )

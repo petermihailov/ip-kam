@@ -72,7 +72,7 @@ class ImageSlider extends React.Component {
           enableMouseEvents
         >
           {images.map((src, idx) => (
-            <img key={idx} className={classes.img} src={src}/>
+            <img key={idx} className={classes.img} src={src} />
           ))}
         </SwipeableViews>
         <MobileStepper
@@ -87,7 +87,7 @@ class ImageSlider extends React.Component {
               disabled={activeStep === maxSteps - 1}
             >
               Далее
-              <KeyboardArrowRight/>
+              <KeyboardArrowRight />
             </Button>
           }
           backButton={
@@ -96,7 +96,7 @@ class ImageSlider extends React.Component {
               onClick={this.handleBack}
               disabled={activeStep === 0}
             >
-              <KeyboardArrowLeft/>
+              <KeyboardArrowLeft />
               Назад
             </Button>
           }
