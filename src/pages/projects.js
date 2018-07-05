@@ -3,21 +3,26 @@ import { withPrefix } from 'gatsby-link'
 import { withStyles } from '@material-ui/core/styles'
 import Helmet from 'react-helmet'
 import Container from '../components/container/container'
+import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import HeaderBanner from '../components/header-banner/header-banner'
 import ImageSlider from '../components/image-slider/image-slider'
-import Divider from '@material-ui/core/Divider'
 
 import projectsData from '../../data/projects'
 
 const s = theme => ({
   container: {
-    columnGap: theme.spacing.unit,
+    columnGap: theme.spacing.unit * 2,
     maxWidth: theme.breakpoints.values.lg,
     margin: '0 auto',
   },
   item: {
     display: 'inline-block',
+    overflow: 'hidden',
+    marginBottom: 8,
+  },
+  text: {
+    padding: theme.spacing.unit * 2,
   },
   [theme.breakpoints.up('sm')]: {
     container: {
@@ -32,6 +37,9 @@ const s = theme => ({
   [theme.breakpoints.up('lg')]: {
     container: {
       columnCount: 4,
+    },
+    item: {
+      width: 310,
     },
   },
 })
@@ -52,20 +60,21 @@ const ProjectsPage = ({ classes }) => (
       ]}
     />
     <HeaderBanner title="Наши работы"/>
-    <div className={classes.container}>
+    <Container className={classes.container}>
       {projectsData.map(({ title, description, images }) => (
-        <Container className={classes.item}>
+        <Paper key={title} className={classes.item}>
           <ImageSlider
             images={images.map(src => withPrefix('/projects/' + src))}
           />
-          <Typography variant="title" gutterBottom>
-            {title}
-          </Typography>
-          <Typography paragraph>{description}</Typography>
-          <Divider/>
-        </Container>
+          <div className={classes.text}>
+            <Typography variant="title" gutterBottom>
+              {title}
+            </Typography>
+            <Typography paragraph>{description}</Typography>
+          </div>
+        </Paper>
       ))}
-    </div>
+    </Container>
   </Fragment>
 )
 

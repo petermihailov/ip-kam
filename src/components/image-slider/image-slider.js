@@ -66,7 +66,7 @@ class ImageSlider extends React.Component {
               onClick={this.handleNext}
               disabled={activeStep === maxSteps - 1}
             >
-              Далее
+              Туда
               <KeyboardArrowRight />
             </Button>
           }
@@ -77,7 +77,7 @@ class ImageSlider extends React.Component {
               disabled={activeStep === 0}
             >
               <KeyboardArrowLeft />
-              Назад
+              Сюда
             </Button>
           }
         />
