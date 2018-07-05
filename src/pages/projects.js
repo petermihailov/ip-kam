@@ -2,17 +2,37 @@ import React, { Fragment } from 'react'
 import { withPrefix } from 'gatsby-link'
 import { withStyles } from '@material-ui/core/styles'
 import Helmet from 'react-helmet'
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
+import Container from '../components/container/container'
 import Typography from '@material-ui/core/Typography'
 import HeaderBanner from '../components/header-banner/header-banner'
 import ImageSlider from '../components/image-slider/image-slider'
+import Divider from '@material-ui/core/Divider'
 
 import projectsData from '../../data/projects'
 
 const s = theme => ({
   container: {
-    padding: theme.spacing.unit * 2,
+    columnGap: theme.spacing.unit,
+    maxWidth: theme.breakpoints.values.lg,
+    margin: '0 auto',
+  },
+  item: {
+    display: 'inline-block',
+  },
+  [theme.breakpoints.up('sm')]: {
+    container: {
+      columnCount: 2,
+    },
+  },
+  [theme.breakpoints.up('md')]: {
+    container: {
+      columnCount: 3,
+    },
+  },
+  [theme.breakpoints.up('lg')]: {
+    container: {
+      columnCount: 4,
+    },
   },
 })
 
@@ -31,22 +51,21 @@ const ProjectsPage = ({ classes }) => (
         },
       ]}
     />
-    <HeaderBanner title="Наши работы" />
-    <Paper elevation={0} square className={classes.container}>
-      <Grid container spacing={16}>
-        {projectsData.map(({ title, description, images }) => (
-          <Grid key={title} item xs={12}>
-            <Typography align="center" variant="title">
-              {title}
-            </Typography>
-            <Typography paragraph>{description}</Typography>
-            <ImageSlider
-              images={images.map(src => withPrefix('/projects/' + src))}
-            />
-          </Grid>
-        ))}
-      </Grid>
-    </Paper>
+    <HeaderBanner title="Наши работы"/>
+    <div className={classes.container}>
+      {projectsData.map(({ title, description, images }) => (
+        <Container className={classes.item}>
+          <ImageSlider
+            images={images.map(src => withPrefix('/projects/' + src))}
+          />
+          <Typography variant="title" gutterBottom>
+            {title}
+          </Typography>
+          <Typography paragraph>{description}</Typography>
+          <Divider/>
+        </Container>
+      ))}
+    </div>
   </Fragment>
 )
 
