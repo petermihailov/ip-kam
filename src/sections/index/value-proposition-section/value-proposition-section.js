@@ -25,6 +25,11 @@ const s = theme => ({
     maxWidth: 400,
     margin: '0 auto',
   },
+  [theme.breakpoints.up('md')]: {
+    container: {
+      marginTop: theme.spacing.unit * 2,
+    },
+  },
 })
 
 const ValueProposition = ({ classes }) => (
