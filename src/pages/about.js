@@ -6,11 +6,7 @@ import HeaderBanner from '../components/header-banner/header-banner'
 import MapSection from '../sections/index/map-section/map-section'
 import Container from '../components/container/container'
 
-const s = theme => ({
-  container: {
-    padding: theme.spacing.unit * 2,
-  },
-})
+const s = theme => ({})
 
 const AboutPage = ({ classes }) => (
   <Fragment>
