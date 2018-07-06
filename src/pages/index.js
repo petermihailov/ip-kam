@@ -51,8 +51,8 @@ class IndexPage extends Component {
           ]}
         />
         <HeaderBanner
-          title="Проектирование и устанавка систем видеонаблюдения"
-          description="Устанавливаем современные системы видеонаблюдения для охраны и контроля своей собственности за разумные деньги"
+          title="Устанавка современных систем видеонаблюдения"
+          description="Быстрая и качественная установка систем видеонаблюдения для охраны и контроля собственности за разумные деньги"
         >
           <div className={classes.buttons}>
             <Button
@@ -74,13 +74,13 @@ class IndexPage extends Component {
             </Button>
           </div>
         </HeaderBanner>
-        <ValuePropositionSection />
-        <MediaSideSection />
-        <SurveySection />
-        <CapabilitiesSection />
-        <TimelineSection />
-        <AdvantageSection />
-        <MapSection />
+        <ValuePropositionSection/>
+        <MediaSideSection/>
+        <SurveySection/>
+        <CapabilitiesSection/>
+        <TimelineSection/>
+        <AdvantageSection/>
+        <MapSection/>
       </Fragment>
     )
   }
