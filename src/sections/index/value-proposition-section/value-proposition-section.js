@@ -8,32 +8,33 @@ import vanImg from './van.png'
 
 const s = theme => ({
   container: {
+    maxWidth: '100%',
     padding: theme.spacing.unit * 2,
   },
   text: {
     margin: '0 auto',
-    maxWidth: theme.breakpoints.values.sm,
+    maxWidth: theme.breakpoints.values.md,
   },
   van: {
     margin: -theme.spacing.unit * 2,
     padding: theme.spacing.unit * 2,
     backgroundImage:
-      'linear-gradient(5deg, rgb(7, 20, 34) 10%, rgb(11, 32, 56) 45%, transparent 45%)',
+      'linear-gradient(2deg, rgb(7, 20, 34) 10%, rgb(11, 32, 56) 45%, transparent 45%)',
   },
   image: {
     display: 'block',
     maxWidth: 400,
     margin: '0 auto',
   },
-  [theme.breakpoints.up('md')]: {
+  [theme.breakpoints.up('sm')]: {
     container: {
-      marginTop: theme.spacing.unit * 2,
+      margin: `${theme.spacing.unit * 2}px auto`,
     },
   },
 })
 
 const ValueProposition = ({ classes }) => (
-  <Container component="section" elevation={1} className={classes.container}>
+  <Container component="section" className={classes.container}>
     <Paper className={classes.text} elevation={0} square>
       <Typography align="center" variant="title" gutterBottom>
         Хотите держать свой бизнес под контролем или сохранить безопасность и
@@ -46,7 +47,7 @@ const ValueProposition = ({ classes }) => (
       </Typography>
     </Paper>
     <div className={classes.van}>
-      <img className={classes.image} src={vanImg} alt="" />
+      <img className={classes.image} src={vanImg} alt=""/>
     </div>
   </Container>
 )

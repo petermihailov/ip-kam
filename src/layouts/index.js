@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import red from '@material-ui/core/colors/red'
+import primary from '@material-ui/core/colors/deepOrange'
+import secondary from '@material-ui/core/colors/blueGrey'
 
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
@@ -9,7 +10,8 @@ import './index.css'
 
 const theme = createMuiTheme({
   palette: {
-    primary: red,
+    primary,
+    secondary,
     type: 'light',
   },
 })

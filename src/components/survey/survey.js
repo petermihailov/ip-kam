@@ -27,7 +27,7 @@ const styles = theme => ({
       flexDirection: 'column',
       justifyContent: 'space-between',
       minHeight: 170,
-      paddingTop: 0,
+      padding: `0 ${theme.spacing.unit * 4}px 0`,
     },
   },
   button: {
