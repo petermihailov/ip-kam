@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Helmet from 'react-helmet'
-import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
