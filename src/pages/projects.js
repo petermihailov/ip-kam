@@ -59,7 +59,7 @@ const ProjectsPage = ({ classes }) => (
         },
       ]}
     />
-    <HeaderBanner title="Наши работы"/>
+    <HeaderBanner title="Наши работы" />
     <Container className={classes.container}>
       {projectsData.map(({ title, description, images }) => (
         <Paper key={title} className={classes.item}>

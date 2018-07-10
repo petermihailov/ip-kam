@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import primary from '@material-ui/core/colors/deepOrange'
-import secondary from '@material-ui/core/colors/blueGrey'
-
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
 import OrderDialog from '../components/order-dialog/order-dialog'
 import './index.css'
+
+import primary from '@material-ui/core/colors/deepOrange'
+import secondary from '@material-ui/core/colors/blueGrey'
 
 const theme = createMuiTheme({
   palette: {

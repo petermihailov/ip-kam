@@ -24,7 +24,7 @@ const s = theme => ({
   [theme.breakpoints.up('sm')]: {
     banner: {
       marginTop: 64,
-    }
+    },
   },
   [theme.breakpoints.up('md')]: {
     toolbar: {
@@ -38,13 +38,13 @@ const s = theme => ({
 const Header = ({ classes, width, location }) => (
   <AppBar position="sticky" color="default">
     <Toolbar className={classes.toolbar}>
-      <Logo/>
+      <Logo />
       {['xs', 'sm'].includes(width) ? (
-        <MobileMenu/>
+        <MobileMenu />
       ) : (
         <Tabs value={pages.map(({ route }) => route).indexOf(location)}>
           {pages.map(({ label, route }, idx) => (
-            <Tab key={idx} label={label} component={Link} to={route}/>
+            <Tab key={idx} label={label} component={Link} to={route} />
           ))}
         </Tabs>
       )}

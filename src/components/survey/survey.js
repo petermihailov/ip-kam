@@ -1,12 +1,15 @@
 import React, { Fragment } from 'react'
 import withWidth from '@material-ui/core/withWidth'
-import { withStyles } from '@material-ui/core/styles'
+import {
+  createMuiTheme,
+  MuiThemeProvider,
+  withStyles,
+} from '@material-ui/core/styles'
 import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
 import StepLabel from '@material-ui/core/StepLabel'
 import StepContent from '@material-ui/core/StepContent'
 import Button from '@material-ui/core/Button'
-import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 
 import TypeQuestion from './type-question'
@@ -14,8 +17,20 @@ import FunctionsQuestion from './functions-question'
 import CamsQuestion from './cams-question'
 import BonusQuestion from './bonus-question'
 
+import primary from '@material-ui/core/colors/deepOrange'
+import secondary from '@material-ui/core/colors/blueGrey'
+
+const theme = createMuiTheme({
+  palette: {
+    primary,
+    secondary,
+    type: 'dark',
+  },
+})
+
 const styles = theme => ({
   stepper: {
+    background: 'none',
     padding: theme.spacing.unit,
     [theme.breakpoints.up('sm')]: {
       padding: theme.spacing.unit * 4,
@@ -164,37 +179,37 @@ class Survey extends React.Component {
     const isHorizontal = width !== 'xs'
 
     return (
-      <Paper elevation={0}>
-        <Stepper
-          className={classes.stepper}
-          activeStep={activeStep}
-          orientation={isHorizontal ? 'horizontal' : 'vertical'}
-        >
-          {steps.map((label, idx) => {
-            return (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-                {!isHorizontal ? (
-                  <StepContent>{this.renderStep(idx)}</StepContent>
-                ) : (
-                  <Fragment />
-                )}
-              </Step>
-            )
-          })}
-        </Stepper>
-        {activeStep === steps.length ? (
-          <Paper square elevation={0} className={classes.container}>
-            <Typography>
-              🎉 All steps completed - you&quot;re finished 🎉
-            </Typography>
-          </Paper>
-        ) : isHorizontal ? (
-          <Paper square elevation={0} className={classes.container}>
-            {this.renderStep()}
-          </Paper>
-        ) : null}
-      </Paper>
+      <MuiThemeProvider theme={theme}>
+        <div>
+          <Stepper
+            className={classes.stepper}
+            activeStep={activeStep}
+            orientation={isHorizontal ? 'horizontal' : 'vertical'}
+          >
+            {steps.map((label, idx) => {
+              return (
+                <Step key={label}>
+                  <StepLabel>{label}</StepLabel>
+                  {!isHorizontal ? (
+                    <StepContent>{this.renderStep(idx)}</StepContent>
+                  ) : (
+                    <Fragment />
+                  )}
+                </Step>
+              )
+            })}
+          </Stepper>
+          {activeStep === steps.length ? (
+            <div className={classes.container}>
+              <Typography>
+                🎉 All steps completed - you&quot;re finished 🎉
+              </Typography>
+            </div>
+          ) : isHorizontal ? (
+            <div className={classes.container}>{this.renderStep()}</div>
+          ) : null}
+        </div>
+      </MuiThemeProvider>
     )
   }
 }

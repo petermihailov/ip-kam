@@ -15,8 +15,8 @@
     "react-text-mask": "^5.4.2"
   },
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop --host localhost --port 8000",
+    "build": "gatsby build",
     "format": "prettier --write 'src/**/*.js'"
   },
   "devDependencies": {

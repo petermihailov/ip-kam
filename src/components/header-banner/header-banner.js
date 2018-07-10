@@ -4,10 +4,22 @@ import Container from './../container/container'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 
+import bgImg from './proto-background-nuanced.svg'
+import edgeImg from './round-edge.svg'
+
 const s = theme => ({
   root: {
-    backgroundImage:
-      'linear-gradient(160deg, rgb(7, 20, 34) 10%, rgb(11, 32, 56) 80%)',
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  banner: {
+    display: 'flex',
+    minHeight: 'calc(80vh - 40px)',
+    paddingBottom: 90,
+    backgroundColor: '#111026',
+    backgroundImage: `url(${bgImg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   },
   divider: {
     backgroundColor: 'rgba(255, 255, 255, 0.12)',
@@ -18,31 +30,46 @@ const s = theme => ({
     maxWidth: theme.breakpoints.values.sm,
     margin: '0 auto',
   },
+  roundEdge: {
+    position: 'absolute',
+    minWidth: 'calc(100% + 20px)',
+    left: -10,
+    right: -10,
+    bottom: -1,
+  },
+  [theme.breakpoints.up('sm')]: {
+    banner: {
+      minHeight: 'calc(45vh - 61px)',
+    },
+  },
 })
 
 const HeaderBanner = ({ classes, title, description, children }) => (
-  <Container className={classes.root} component="section" banner>
-    {title ? (
-      <Typography color="inherit" align="center" variant="display1">
-        {title}
-      </Typography>
-    ) : null}
-    {description ? (
-      <Fragment>
-        <Divider className={classes.divider}/>
-        <Typography
-          className={classes.subheading}
-          color="inherit"
-          align="center"
-          variant="subheading"
-          component="p"
-        >
-          {description}
+  <section className={classes.root}>
+    <Container className={classes.banner} banner>
+      {title ? (
+        <Typography color="inherit" align="center" variant="display1">
+          {title}
         </Typography>
-      </Fragment>
-    ) : null}
-    {children}
-  </Container>
+      ) : null}
+      {description ? (
+        <Fragment>
+          <Divider className={classes.divider} />
+          <Typography
+            className={classes.subheading}
+            color="inherit"
+            align="center"
+            variant="subheading"
+            component="p"
+          >
+            {description}
+          </Typography>
+        </Fragment>
+      ) : null}
+      {children}
+    </Container>
+    <img className={classes.roundEdge} src={edgeImg} alt="" />
+  </section>
 )
 
 export default withStyles(s)(HeaderBanner)

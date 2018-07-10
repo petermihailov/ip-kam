@@ -16,8 +16,7 @@ const s = theme => ({
   footer: {
     padding: theme.spacing.unit * 2,
     color: '#fff',
-    backgroundImage:
-      'linear-gradient(160deg, rgb(7, 20, 34) 10%, rgb(11, 32, 56) 80%)',
+    backgroundColor: '#111026',
   },
 })
 

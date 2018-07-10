@@ -10,45 +10,38 @@ const s = theme => ({
   container: {
     maxWidth: '100%',
     padding: theme.spacing.unit * 2,
+    marginTop: -160,
+    backgroundColor: 'transparent',
   },
   text: {
-    margin: '0 auto',
+    margin: '3rem auto',
     maxWidth: theme.breakpoints.values.md,
-  },
-  van: {
-    margin: -theme.spacing.unit * 2,
-    padding: theme.spacing.unit * 2,
-    backgroundImage:
-      'linear-gradient(2deg, rgb(7, 20, 34) 10%, rgb(11, 32, 56) 45%, transparent 45%)',
+    color: 'rgba(132,135,141,0.6)',
+    textAlign: 'center',
+    fontSize: '2.5rem',
   },
   image: {
     display: 'block',
+    position: 'relative',
     maxWidth: 400,
-    margin: '0 auto',
-  },
-  [theme.breakpoints.up('sm')]: {
-    container: {
-      margin: `${theme.spacing.unit * 2}px auto`,
-    },
+    margin: `0 auto ${theme.spacing.unit * 2}px`,
   },
 })
 
 const ValueProposition = ({ classes }) => (
   <Container component="section" className={classes.container}>
+    <img className={classes.image} src={vanImg} alt="" />
     <Paper className={classes.text} elevation={0} square>
-      <Typography align="center" variant="title" gutterBottom>
+      <Typography variant="title" component="h1" gutterBottom>
         Хотите держать свой бизнес под контролем или сохранить безопасность и
         комфорт в доме?
       </Typography>
-      <Typography align="center" gutterBottom>
+      <Typography variant="title" component="p" color="inherit">
         Наше видеооборудование станет отличным решением! Мы разработаем и
         установим уникальный проект, адаптированный под ваши потребности и
         задачи.
       </Typography>
     </Paper>
-    <div className={classes.van}>
-      <img className={classes.image} src={vanImg} alt=""/>
-    </div>
   </Container>
 )
 

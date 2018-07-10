@@ -3,19 +3,23 @@ import cn from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 
+import bg from './background-shapes-nano.svg'
+
 const s = theme => ({
   root: {
     position: 'relative',
   },
   container: {
     maxWidth: theme.breakpoints.values.md,
-    margin: '0 auto',
+    margin: 'auto',
     padding: theme.spacing.unit * 2,
     overflow: 'hidden',
   },
   isBanner: {
+    padding: `${theme.spacing.unit * 4}px 0`,
     color: '#fff',
-    background: 'linear-gradient(140deg, rgb(7, 20, 34), rgb(43, 73, 104))',
+    backgroundColor: '#111026',
+    backgroundImage: `url(${bg})`,
   },
 })
 
