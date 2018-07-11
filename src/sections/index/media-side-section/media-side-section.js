@@ -22,9 +22,6 @@ const s = theme => ({
 
 const MediaSideSection = ({ classes }) => (
   <Container component="section">
-    <Typography align="center" variant="title" gutterBottom>
-      Видеонаблюдение через смартфон
-    </Typography>
     <Grid
       container
       spacing={16}
@@ -32,6 +29,9 @@ const MediaSideSection = ({ classes }) => (
       className={classes.gutterBottom}
     >
       <Grid item xs={12} sm={6} className={classes.mobileBottom}>
+        <Typography variant="title" gutterBottom>
+          Видеонаблюдение через смартфон
+        </Typography>
         <Typography>
           Самое рациональное, эффективное и удобное решение для тех, кто ценит
           мобильность и комфорт. Удаленное видеонаблюдение можно организовать
@@ -43,14 +43,14 @@ const MediaSideSection = ({ classes }) => (
         <IphoneVideo />
       </Grid>
     </Grid>
-    <Typography align="center" variant="title" gutterBottom>
-      Видеонаблюдение на компьютере
-    </Typography>
     <Grid container spacing={16} alignItems="center">
       <Grid item xs={12} sm={6}>
         <MacbookVideo />
       </Grid>
       <Grid item xs={12} sm={6}>
+        <Typography variant="title" gutterBottom>
+          Видеонаблюдение на компьютере
+        </Typography>
         <Typography>
           Вы сможете оперативно подключить видеонаблюдение на неограниченном
           количестве объектов и объединить их в систему с возможностью доступа

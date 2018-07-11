@@ -38,7 +38,7 @@ const s = theme => ({
   },
   [theme.breakpoints.up('sm')]: {
     banner: {
-      minHeight: 'calc(45vh - 61px)',
+      minHeight: 'calc(40vh - 61px)',
     },
   },
 })
@@ -47,7 +47,7 @@ const HeaderBanner = ({ classes, title, description, children }) => (
   <section className={classes.root}>
     <Container className={classes.banner} banner>
       {title ? (
-        <Typography color="inherit" align="center" variant="display1">
+        <Typography color="inherit" align="center" variant="display1" gutterBottom>
           {title}
         </Typography>
       ) : null}
