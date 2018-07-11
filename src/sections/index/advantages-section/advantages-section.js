@@ -1,6 +1,7 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
@@ -12,52 +13,63 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime'
 import TouchAppIcon from '@material-ui/icons/TouchApp'
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser'
 
-import color from '@material-ui/core/colors/deepOrange'
+import calendarIcon from './icon-calendar.svg'
+import employerIcon from './icon-employer.svg'
+import licensingIcon from './icon-licensing.svg'
+import touchIcon from './icon-touch.svg'
 
 const styles = theme => ({
   icon: {
-    color: color[500],
+    display: 'block',
+    margin: '0 auto',
+    width: 48,
+    height: 48,
+    marginBottom: theme.spacing.unit,
   },
 })
 
 const data = [
   {
-    icon: <DirectionsCarIcon />,
+    icon: employerIcon,
     label: 'Бесплатный выезд специалиста в день обращения',
   },
   {
-    icon: <AccessTimeIcon />,
+    icon: calendarIcon,
     label: 'Монтаж по индивидуальному проекту за 1 день',
   },
   {
-    icon: <TouchAppIcon />,
+    icon: touchIcon,
     label:
-      'Управление системой со своего смартфона, планшета или компьютера в 1 клик',
+      'Управление в 1 клик',
   },
   {
-    icon: <VerifiedUserIcon />,
+    icon: licensingIcon,
     label: 'Гарантия 3 года',
   },
 ]
 
 const AdvantagesSection = ({ classes }) => (
   <Container component="section">
-    <Typography align="center" color="inherit" variant="title">
-      Преимущества
-    </Typography>
-    <List className={classes.list}>
-      {data.map((itm, idx) => (
-        <ListItem key={idx}>
-          <ListItemIcon className={classes.icon}>{itm.icon}</ListItemIcon>
-          <ListItemText
-            className={classes.item}
-            primary={itm.label}
-            disableTypography
-          />
-        </ListItem>
+    <Grid container spacing={24}>
+      {data.map((itm) => (
+        <Grid key={itm.label} item xs={6} sm={3}>
+          <img className={classes.icon} src={itm.icon} alt=""/>
+          <Typography align="center" component="span">
+            {itm.label}
+          </Typography>
+        </Grid>
       ))}
-    </List>
+    </Grid>
   </Container>
 )
 
 export default withStyles(styles)(AdvantagesSection)
+
+// <ListItem key={idx}>
+//   <ListItemIcon className={classes.icon}>{itm.icon}</ListItemIcon>
+// <ListItemText
+// className={classes.item}
+// primary={itm.label}
+// disableTypography
+// />
+// </ListItem>

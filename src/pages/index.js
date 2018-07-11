@@ -3,8 +3,8 @@ import Helmet from 'react-helmet'
 import { withStyles } from '@material-ui/core/styles'
 import HeaderBanner from '../components/header-banner/header-banner'
 import MediaSideSection from '../sections/index/media-side-section/media-side-section'
-// import CapabilitiesSection from '../sections/index/capabilities-section/capabilities-section'
-// import TimelineSection from '../sections/index/timeline-section/timeline-section'
+import CapabilitiesSection from '../sections/index/capabilities-section/capabilities-section'
+import TimelineSection from '../sections/index/timeline-section/timeline-section'
 import AdvantageSection from '../sections/index/advantages-section/advantages-section'
 import SurveySection from '../sections/index/survey-section/survey-section'
 import ValuePropositionSection from '../sections/index/value-proposition-section/value-proposition-section'
@@ -75,11 +75,11 @@ class IndexPage extends Component {
           </div>
         </HeaderBanner>
         <ValuePropositionSection />
+        <AdvantageSection />
         <MediaSideSection />
         <SurveySection />
-        <AdvantageSection />
-        {/*<TimelineSection />*/}
-        {/*<CapabilitiesSection />*/}
+        <TimelineSection />
+        <CapabilitiesSection />
         <MapSection />
       </Fragment>
     )

@@ -14,7 +14,6 @@ const s = theme => ({
     backgroundColor: 'transparent',
   },
   text: {
-    margin: '3rem auto',
     maxWidth: theme.breakpoints.values.md,
     color: 'rgba(132,135,141,0.6)',
     textAlign: 'center',
