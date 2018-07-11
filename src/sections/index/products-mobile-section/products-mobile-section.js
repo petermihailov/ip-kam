@@ -14,7 +14,7 @@ const ProductsMobileSection = () => (
       </Grid>
       <Grid item xs={12}>
         <Typography align="center">
-          Помимо устанавки системы видеонаблюдения вы можете отдельно заказать
+          Помимо установки системы видеонаблюдения вы можете отдельно заказать
           наше <Link to={'/products/'}>оборудование</Link>
         </Typography>
       </Grid>

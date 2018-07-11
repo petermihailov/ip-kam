@@ -14,8 +14,7 @@ const s = theme => ({
   },
   banner: {
     display: 'flex',
-    minHeight: 'calc(80vh - 40px)',
-    paddingBottom: 90,
+    paddingBottom: 150,
     backgroundColor: '#111026',
     backgroundImage: `url(${bgImg})`,
     backgroundSize: 'cover',
