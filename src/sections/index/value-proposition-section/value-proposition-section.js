@@ -40,13 +40,23 @@ const s = theme => ({
 
 const ValueProposition = ({ classes }) => (
   <Container component="section" className={classes.container}>
-    <img className={classes.image} src={vanImg} alt=""/>
+    <img className={classes.image} src={vanImg} alt="" />
     <Paper className={classes.textBlock} elevation={0} square>
-      <Typography className={classes.text} variant="title" component="h1" gutterBottom>
+      <Typography
+        className={classes.text}
+        variant="title"
+        component="h1"
+        gutterBottom
+      >
         Хотите держать свой бизнес под контролем или сохранить безопасность и
         комфорт в доме?
       </Typography>
-      <Typography className={classes.text} variant="title" component="p" color="inherit">
+      <Typography
+        className={classes.text}
+        variant="title"
+        component="p"
+        color="inherit"
+      >
         Наше видеооборудование станет отличным решением! Мы разработаем и
         установим уникальный проект, адаптированный под ваши потребности и
         задачи.

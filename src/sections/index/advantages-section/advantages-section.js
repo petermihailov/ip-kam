@@ -33,8 +33,7 @@ const data = [
   },
   {
     icon: touchIcon,
-    label:
-      'Управление в 1 клик',
+    label: 'Управление в 1 клик',
   },
   {
     icon: licensingIcon,
@@ -45,9 +44,9 @@ const data = [
 const AdvantagesSection = ({ classes }) => (
   <Container component="section" className={classes.container}>
     <Grid container spacing={16}>
-      {data.map((itm) => (
+      {data.map(itm => (
         <Grid key={itm.label} item xs={6} sm={3}>
-          <img className={classes.icon} src={itm.icon} alt=""/>
+          <img className={classes.icon} src={itm.icon} alt="" />
           <Typography align="center" component="span">
             {itm.label}
           </Typography>
