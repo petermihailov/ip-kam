@@ -13,11 +13,11 @@ const s = theme => ({
     marginTop: -160,
     backgroundColor: 'transparent',
   },
-  text: {
-    maxWidth: theme.breakpoints.values.md,
+  textBlock: {
+    maxWidth: 720,
+    margin: '0 auto',
     color: 'rgba(132,135,141,0.6)',
     textAlign: 'center',
-    fontSize: '2.5rem',
   },
   image: {
     display: 'block',
@@ -25,17 +25,28 @@ const s = theme => ({
     maxWidth: 400,
     margin: `0 auto ${theme.spacing.unit * 2}px`,
   },
+  [theme.breakpoints.down('sm')]: {
+    text: {
+      fontSize: '1rem',
+      lineHeight: '1.5rem',
+    },
+  },
+  [theme.breakpoints.up('sm')]: {
+    textBlock: {
+      maxWidth: theme.breakpoints.values.md,
+    },
+  },
 })
 
 const ValueProposition = ({ classes }) => (
   <Container component="section" className={classes.container}>
-    <img className={classes.image} src={vanImg} alt="" />
-    <Paper className={classes.text} elevation={0} square>
-      <Typography variant="title" component="h1" gutterBottom>
+    <img className={classes.image} src={vanImg} alt=""/>
+    <Paper className={classes.textBlock} elevation={0} square>
+      <Typography className={classes.text} variant="title" component="h1" gutterBottom>
         Хотите держать свой бизнес под контролем или сохранить безопасность и
         комфорт в доме?
       </Typography>
-      <Typography variant="title" component="p" color="inherit">
+      <Typography className={classes.text} variant="title" component="p" color="inherit">
         Наше видеооборудование станет отличным решением! Мы разработаем и
         установим уникальный проект, адаптированный под ваши потребности и
         задачи.

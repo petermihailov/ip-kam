@@ -2,16 +2,7 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
 import Container from '../../../components/container/container'
-
-import DirectionsCarIcon from '@material-ui/icons/DirectionsCar'
-import AccessTimeIcon from '@material-ui/icons/AccessTime'
-import TouchAppIcon from '@material-ui/icons/TouchApp'
-import VerifiedUserIcon from '@material-ui/icons/VerifiedUser'
 
 import calendarIcon from './icon-calendar.svg'
 import employerIcon from './icon-employer.svg'
@@ -19,6 +10,9 @@ import licensingIcon from './icon-licensing.svg'
 import touchIcon from './icon-touch.svg'
 
 const styles = theme => ({
+  container: {
+    padding: theme.spacing.unit * 4,
+  },
   icon: {
     display: 'block',
     margin: '0 auto',
@@ -49,8 +43,8 @@ const data = [
 ]
 
 const AdvantagesSection = ({ classes }) => (
-  <Container component="section">
-    <Grid container spacing={24}>
+  <Container component="section" className={classes.container}>
+    <Grid container spacing={16}>
       {data.map((itm) => (
         <Grid key={itm.label} item xs={6} sm={3}>
           <img className={classes.icon} src={itm.icon} alt=""/>
