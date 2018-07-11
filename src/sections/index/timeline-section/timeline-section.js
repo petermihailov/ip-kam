@@ -28,7 +28,6 @@ const stepContent = [
 class TimelineSection extends React.Component {
   render() {
     const { classes } = this.props
-
     return (
       <Container component="section">
         <Stepper orientation="vertical">

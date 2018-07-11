@@ -7,9 +7,23 @@ import ListItemText from '@material-ui/core/ListItemText'
 import Container from '../../../components/container/container'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 
+import cctvBg from './cctv-camera-bg.svg'
+
 const styles = theme => ({
   icon: {
     color: '#fd9800',
+  },
+  bgImg: {
+    position: 'absolute',
+    bottom: 0,
+    width: 320,
+    right: '5%',
+    opacity: 0,
+  },
+  [theme.breakpoints.up('sm')]: {
+    bgImg: {
+      opacity: .1,
+    },
   },
 })
 
@@ -33,11 +47,12 @@ const CapabilitiesSection = ({ classes }) => (
     <List>
       {data.map((itm, idx) => (
         <ListItem key={idx}>
-          <CheckCircleIcon className={classes.icon} />
-          <ListItemText primary={itm} disableTypography />
+          <CheckCircleIcon className={classes.icon}/>
+          <ListItemText primary={itm} disableTypography/>
         </ListItem>
       ))}
     </List>
+    <img className={classes.bgImg} src={cctvBg} alt=""/>
   </Container>
 )
 
