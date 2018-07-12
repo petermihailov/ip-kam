@@ -22,7 +22,7 @@ const styles = theme => ({
   },
   [theme.breakpoints.up('sm')]: {
     bgImg: {
-      opacity: .1,
+      opacity: .09,
     },
   },
 })

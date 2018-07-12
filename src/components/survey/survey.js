@@ -68,7 +68,7 @@ function getSteps() {
 
 class Survey extends React.Component {
   state = {
-    activeStep: 0,
+    activeStep: 2,
     data: {
       requirements: new Set(),
     },
@@ -109,30 +109,32 @@ class Survey extends React.Component {
   }
 
   getStepContent(step) {
+    const { data } = this.state
+
     switch (step) {
       case 0:
         return (
-          <TypeQuestion value={this.state.data.type} onChange={this.onChange} />
+          <TypeQuestion value={data.type} onChange={this.onChange} />
         )
       case 1:
         return (
           <FunctionsQuestion
-            values={this.state.data.requirements}
+            values={data.requirements}
             onChange={this.onChange}
           />
         )
       case 2:
         return (
           <CamsQuestion
-            outsideCams={this.state.data.outsideCams}
-            insideCams={this.state.data.insideCams}
+            outsideCams={data.outsideCams}
+            insideCams={data.insideCams}
             onChange={this.onChange}
           />
         )
       case 3:
         return (
           <BonusQuestion
-            value={this.state.data.bonus}
+            value={data.bonus}
             onChange={this.onChange}
           />
         )
