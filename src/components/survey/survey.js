@@ -68,7 +68,7 @@ function getSteps() {
 
 class Survey extends React.Component {
   state = {
-    activeStep: 2,
+    activeStep: 0,
     data: {
       requirements: new Set(),
     },
@@ -92,6 +92,16 @@ class Survey extends React.Component {
     })
   }
 
+  isValidStep = () => {
+    const { activeStep, data } = this.state
+
+    if (activeStep === 2) {
+      return data.insideCams || data.outsideCams
+    }
+
+    return true
+  }
+
   onChange = e => {
     const { data } = this.state
     const { value, name, type } = e.target
@@ -113,9 +123,7 @@ class Survey extends React.Component {
 
     switch (step) {
       case 0:
-        return (
-          <TypeQuestion value={data.type} onChange={this.onChange} />
-        )
+        return <TypeQuestion value={data.type} onChange={this.onChange} />
       case 1:
         return (
           <FunctionsQuestion
@@ -132,12 +140,7 @@ class Survey extends React.Component {
           />
         )
       case 3:
-        return (
-          <BonusQuestion
-            value={data.bonus}
-            onChange={this.onChange}
-          />
-        )
+        return <BonusQuestion value={data.bonus} onChange={this.onChange} />
     }
   }
 
@@ -164,6 +167,7 @@ class Survey extends React.Component {
               color="primary"
               onClick={this.handleNext}
               className={classes.button}
+              disabled={!this.isValidStep()}
             >
               {activeStep === steps.length - 1 ? 'Результат' : 'Далее'}
             </Button>

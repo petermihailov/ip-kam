@@ -47,7 +47,12 @@ const HeaderBanner = ({ classes, title, description, children }) => (
   <section className={classes.root}>
     <Container className={classes.banner} banner>
       {title ? (
-        <Typography color="inherit" align="center" variant="display1" gutterBottom>
+        <Typography
+          color="inherit"
+          align="center"
+          variant="display1"
+          gutterBottom
+        >
           {title}
         </Typography>
       ) : null}

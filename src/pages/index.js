@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { withStyles } from '@material-ui/core/styles'
 import HeaderBanner from '../components/header-banner/header-banner'
+import OrderSection from '../sections/index/order-section/order-section'
 import MediaSideSection from '../sections/index/media-side-section/media-side-section'
 import CapabilitiesSection from '../sections/index/capabilities-section/capabilities-section'
 import TimelineSection from '../sections/index/timeline-section/timeline-section'
@@ -77,6 +78,7 @@ class IndexPage extends Component {
         <ValuePropositionSection />
         <AdvantageSection />
         <MediaSideSection />
+        <OrderSection />
         <SurveySection />
         <TimelineSection />
         <CapabilitiesSection />

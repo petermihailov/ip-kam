@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import Link from 'gatsby-link'
 import { withStyles } from '@material-ui/core/styles'
 import Dialog from '@material-ui/core/Dialog'
 import DialogTitle from '@material-ui/core/DialogTitle'
@@ -6,7 +7,6 @@ import Form from './form-call'
 import ThankYou from './thank-you'
 import Error from './error'
 import Typography from '@material-ui/core/Typography'
-import Link from 'gatsby-link'
 
 const styles = theme => ({
   policy: {

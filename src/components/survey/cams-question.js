@@ -9,9 +9,9 @@ const styles = theme => ({})
 
 class CamsQuestion extends React.Component {
   renderSelect = (name, value, label) => {
-    const {onChange} = this.props
+    const { onChange } = this.props
 
-    const id = name + '-id';
+    const id = name + '-id'
     return (
       <FormControl fullWidth>
         <InputLabel htmlFor={id}>{label}</InputLabel>
@@ -24,12 +24,12 @@ class CamsQuestion extends React.Component {
           }}
           native
         >
-          <option value=""/>
-          {
-            Array.apply(null, {length: 16}).map((val,idx) =>
-              <option key={idx} value={idx + 1}>{idx + 1}</option>
-            )
-          }
+          <option value="">нет</option>
+          {Array.apply(null, { length: 16 }).map((val, idx) => (
+            <option key={idx} value={idx + 1}>
+              {idx + 1}
+            </option>
+          ))}
         </Select>
       </FormControl>
     )
@@ -41,14 +41,10 @@ class CamsQuestion extends React.Component {
     return (
       <Grid container spacing={8}>
         <Grid item xs={12} sm={6}>
-          {
-            this.renderSelect('insideCams', insideCams, 'Внутренние камеры')
-          }
+          {this.renderSelect('insideCams', insideCams, 'Внутренние камеры')}
         </Grid>
         <Grid item xs={12} sm={6}>
-          {
-            this.renderSelect('outsideCams', outsideCams, 'Уличные камеры')
-          }
+          {this.renderSelect('outsideCams', outsideCams, 'Уличные камеры')}
         </Grid>
       </Grid>
     )

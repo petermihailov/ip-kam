@@ -9,16 +9,7 @@ import NameQuestion from './name-question'
 import PhoneQuestion from './phone-question'
 import CommentQuestion from './comment-question'
 
-const styles = theme => ({
-  // dialog: {
-  //   minWidth: 260,
-  // },
-  // [theme.breakpoints.up('sm')]: {
-  //   dialog: {
-  //     minWidth: 460,
-  //   },
-  // }
-})
+const styles = theme => ({})
 
 class CallForm extends Component {
   state = {
