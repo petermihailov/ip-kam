@@ -40,6 +40,30 @@ function TextMaskCustom(props) {
   )
 }
 
+export class PhoneField extends Component {
+  render() {
+    const { value, onChange, fullWidth } = this.props
+
+    return (
+      <FormControl fullWidth={fullWidth}>
+        <InputLabel htmlFor="phone-mask-input" required focused shrink>
+          Телефон
+        </InputLabel>
+        <Input
+          value={value}
+          name="phone"
+          onChange={onChange}
+          id="phone-mask-input"
+          inputComponent={TextMaskCustom}
+          type="tel"
+          required
+          autoFocus
+        />
+      </FormControl>
+    )
+  }
+}
+
 class PhoneQuestion extends Component {
   onCommentChange = (e, value) => {
     const { onChange, setLastStep } = this.props
@@ -52,24 +76,9 @@ class PhoneQuestion extends Component {
 
   render() {
     const { value, onChange } = this.props
-
     return (
       <Fragment>
-        <FormControl fullWidth>
-          <InputLabel htmlFor="phone-mask-input" required focused shrink>
-            Телефон
-          </InputLabel>
-          <Input
-            value={value}
-            name="phone"
-            onChange={onChange}
-            id="phone-mask-input"
-            inputComponent={TextMaskCustom}
-            type="tel"
-            required
-            autoFocus
-          />
-        </FormControl>
+        <PhoneField value={value} onChange={onChange} fullWidth />
         <FormControl fullWidth>
           <FormControlLabel
             control={

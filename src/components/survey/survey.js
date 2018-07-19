@@ -1,10 +1,12 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
+import queryString from 'query-string'
 import withWidth from '@material-ui/core/withWidth'
 import {
   createMuiTheme,
   MuiThemeProvider,
   withStyles,
 } from '@material-ui/core/styles'
+import Link from 'gatsby-link'
 import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
 import StepLabel from '@material-ui/core/StepLabel'
@@ -49,6 +51,9 @@ const styles = theme => ({
     marginTop: theme.spacing.unit,
     marginRight: theme.spacing.unit,
   },
+  estimateButton: {
+    width: '100%',
+  },
   actionsContainer: {
     marginBottom: theme.spacing.unit * 2,
     [theme.breakpoints.up('md')]: {
@@ -66,7 +71,7 @@ function getSteps() {
   ]
 }
 
-class Survey extends React.Component {
+class Survey extends Component {
   state = {
     activeStep: 0,
     data: {
@@ -81,8 +86,10 @@ class Survey extends React.Component {
   }
 
   handleBack = () => {
+    const { data } = this.state
     this.setState({
       activeStep: this.state.activeStep - 1,
+      data: { ...data, bonus: undefined },
     })
   }
 
@@ -139,15 +146,30 @@ class Survey extends React.Component {
             onChange={this.onChange}
           />
         )
-      case 3:
-        return <BonusQuestion value={data.bonus} onChange={this.onChange} />
+      case 3: {
+        const disabled =
+          parseInt(data.insideCams || 0) + parseInt(data.outsideCams || 0) < 4
+
+        return (
+          <BonusQuestion
+            value={data.bonus}
+            onChange={this.onChange}
+            disabled={disabled}
+            disabledMessage="Выбор бонуса доступен при установке более 4 камер"
+          />
+        )
+      }
     }
   }
 
   renderStep = idx => {
     const { classes } = this.props
+    const {
+      activeStep,
+      data: { insideCams, outsideCams, bonus },
+    } = this.state
     const steps = getSteps()
-    const { activeStep } = this.state
+
     const step = idx !== undefined ? idx : activeStep
 
     return (
@@ -162,15 +184,31 @@ class Survey extends React.Component {
             >
               Назад
             </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={this.handleNext}
-              className={classes.button}
-              disabled={!this.isValidStep()}
-            >
-              {activeStep === steps.length - 1 ? 'Результат' : 'Далее'}
-            </Button>
+            {activeStep !== steps.length - 1 ? (
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={this.handleNext}
+                className={classes.button}
+                disabled={!this.isValidStep()}
+              >
+                Далее
+              </Button>
+            ) : (
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                component={Link}
+                to={`estimate?${queryString.stringify({
+                  insideCams,
+                  outsideCams,
+                  bonus,
+                })}`}
+              >
+                Результат
+              </Button>
+            )}
           </div>
         </div>
       </Fragment>
@@ -179,8 +217,8 @@ class Survey extends React.Component {
 
   render() {
     const { classes, width } = this.props
-    const steps = getSteps()
     const { activeStep } = this.state
+    const steps = getSteps()
 
     const isHorizontal = width !== 'xs'
 
@@ -198,20 +236,12 @@ class Survey extends React.Component {
                   <StepLabel>{label}</StepLabel>
                   {!isHorizontal ? (
                     <StepContent>{this.renderStep(idx)}</StepContent>
-                  ) : (
-                    <Fragment />
-                  )}
+                  ) : null}
                 </Step>
               )
             })}
           </Stepper>
-          {activeStep === steps.length ? (
-            <div className={classes.container}>
-              <Typography>
-                🎉 All steps completed - you&quot;re finished 🎉
-              </Typography>
-            </div>
-          ) : isHorizontal ? (
+          {isHorizontal ? (
             <div className={classes.container}>{this.renderStep()}</div>
           ) : null}
         </div>

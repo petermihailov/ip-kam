@@ -26,7 +26,7 @@ const styles = theme => ({
     section: {
       height: 0,
       position: 'relative',
-      paddingTop: '34.75%', //16:9
+      paddingTop: '34.76190476%', // (h1168 / w3360) * 100 = 34.76190476
     },
     container: {
       position: 'absolute',

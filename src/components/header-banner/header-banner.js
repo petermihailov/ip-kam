@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import cn from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
 import Container from './../container/container'
 import Typography from '@material-ui/core/Typography'
@@ -14,7 +15,7 @@ const s = theme => ({
   },
   banner: {
     display: 'flex',
-    paddingBottom: 150,
+    paddingBottom: 50,
     backgroundColor: '#111026',
     backgroundImage: `url(${bgImg})`,
     backgroundSize: 'cover',
@@ -38,14 +39,14 @@ const s = theme => ({
   },
   [theme.breakpoints.up('sm')]: {
     banner: {
-      minHeight: 'calc(40vh - 61px)',
+      // minHeight: 'calc(40vh - 61px)',
     },
   },
 })
 
-const HeaderBanner = ({ classes, title, description, children }) => (
+const HeaderBanner = ({ className, classes, title, description, children }) => (
   <section className={classes.root}>
-    <Container className={classes.banner} banner>
+    <Container className={cn(classes.banner, className)} banner>
       {title ? (
         <Typography
           color="inherit"

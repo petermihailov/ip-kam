@@ -19,6 +19,9 @@ const styles = theme => ({
     flexWrap: 'wrap',
     marginTop: theme.spacing.unit,
   },
+  banner: {
+    paddingBottom: 150,
+  },
   button: {
     margin: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
   },
@@ -52,6 +55,7 @@ class IndexPage extends Component {
           ]}
         />
         <HeaderBanner
+          className={classes.banner}
           title="Установка современных систем видеонаблюдения"
           description="Быстрая и качественная установка систем видеонаблюдения для охраны и контроля собственности за разумные деньги"
         >

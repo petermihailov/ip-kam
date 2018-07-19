@@ -1,13 +1,31 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Container from '../../../components/container/container'
+import OrderForm from '../../../components/order-form/order-form'
 import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
 import StepLabel from '@material-ui/core/StepLabel'
 import StepContent from '@material-ui/core/StepContent'
 import Typography from '@material-ui/core/Typography'
 
-const styles = theme => ({})
+const styles = theme => ({
+  container: {
+    display: 'flex',
+  },
+  stepper: {
+    flex: 1,
+  },
+  form: {
+    display: 'none',
+  },
+  [theme.breakpoints.up('sm')]: {
+    form: {
+      display: 'block',
+      flex: 'none',
+      width: 270,
+    },
+  },
+})
 
 const steps = [
   'Ваш звонок или заявка на сайте',
@@ -29,8 +47,8 @@ class TimelineSection extends React.Component {
   render() {
     const { classes } = this.props
     return (
-      <Container component="section">
-        <Stepper orientation="vertical">
+      <Container component="section" className={classes.container}>
+        <Stepper orientation="vertical" className={classes.stepper}>
           {steps.map((label, idx) => {
             return (
               <Step key={label} active>
@@ -42,6 +60,7 @@ class TimelineSection extends React.Component {
             )
           })}
         </Stepper>
+        <OrderForm className={classes.form} />
       </Container>
     )
   }
