@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Link from 'gatsby-link'
+import cn from 'classnames'
 import {
   createMuiTheme,
   MuiThemeProvider,
@@ -26,6 +26,9 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 3,
     overflowX: 'auto',
   },
+  cell: {
+    padding: '4px 48px 4px 16px',
+  },
   headLine: {
     fontWeight: 'bold',
     backgroundColor: '#f8f8fc',
@@ -47,11 +50,11 @@ const Estimate = ({ classes, data }) => (
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>Наименование</TableCell>
-            <TableCell numeric>Единицы</TableCell>
-            <TableCell numeric>Количество</TableCell>
-            <TableCell numeric>Цена</TableCell>
-            <TableCell numeric>Итог</TableCell>
+            <TableCell className={classes.cell}>Наименование</TableCell>
+            <TableCell className={classes.cell} numeric>Единицы</TableCell>
+            <TableCell className={classes.cell} numeric>Количество</TableCell>
+            <TableCell className={classes.cell} numeric>Цена</TableCell>
+            <TableCell className={classes.cell} numeric>Итог</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -59,7 +62,7 @@ const Estimate = ({ classes, data }) => (
             <Fragment key={label}>
               <TableRow>
                 <TableCell
-                  className={classes.headLine}
+                  className={cn(classes.headLine, classes.cell)}
                   component="th"
                   scope="row"
                   colSpan={5}
@@ -70,15 +73,15 @@ const Estimate = ({ classes, data }) => (
               {data.map((n, idx) => {
                 return (
                   <TableRow key={idx}>
-                    <TableCell component="th" scope="row">
+                    <TableCell component="th" scope="row" className={classes.cell}>
                       {n.name}
                     </TableCell>
-                    <TableCell numeric>{n.measure}</TableCell>
-                    <TableCell numeric>{n.count}</TableCell>
-                    <TableCell numeric>
+                    <TableCell className={classes.cell} numeric>{n.measure}</TableCell>
+                    <TableCell className={classes.cell} numeric>{n.count}</TableCell>
+                    <TableCell className={classes.cell} numeric>
                       {n.price.toLocaleString('ru') + ' ₽'}
                     </TableCell>
-                    <TableCell numeric>
+                    <TableCell className={classes.cell} numeric>
                       {(n.price * n.count).toLocaleString('ru') + ' ₽'}
                     </TableCell>
                   </TableRow>

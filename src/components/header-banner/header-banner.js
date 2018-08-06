@@ -1,12 +1,27 @@
 import React, { Fragment } from 'react'
 import cn from 'classnames'
-import { withStyles } from '@material-ui/core/styles'
+import {
+  createMuiTheme,
+  MuiThemeProvider,
+  withStyles,
+} from '@material-ui/core/styles'
 import Container from './../container/container'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 
 import bgImg from './proto-background-nuanced.svg'
 import edgeImg from './round-edge.svg'
+
+import primary from '@material-ui/core/colors/deepOrange'
+import secondary from '@material-ui/core/colors/blueGrey'
+
+const theme = createMuiTheme({
+  palette: {
+    primary,
+    secondary,
+    type: 'dark',
+  },
+})
 
 const s = theme => ({
   root: {
@@ -15,7 +30,7 @@ const s = theme => ({
   },
   banner: {
     display: 'flex',
-    paddingBottom: 50,
+    paddingBottom: '5%',
     backgroundColor: '#111026',
     backgroundImage: `url(${bgImg})`,
     backgroundSize: 'cover',
@@ -36,45 +51,44 @@ const s = theme => ({
     left: -10,
     right: -10,
     bottom: -1,
-  },
-  [theme.breakpoints.up('sm')]: {
-    banner: {
-      // minHeight: 'calc(40vh - 61px)',
-    },
+    pointerEvents: 'none',
+    userSelect: 'none',
   },
 })
 
 const HeaderBanner = ({ className, classes, title, description, children }) => (
-  <section className={classes.root}>
-    <Container className={cn(classes.banner, className)} banner>
-      {title ? (
-        <Typography
-          color="inherit"
-          align="center"
-          variant="display1"
-          gutterBottom
-        >
-          {title}
-        </Typography>
-      ) : null}
-      {description ? (
-        <Fragment>
-          <Divider className={classes.divider} />
+  <MuiThemeProvider theme={theme}>
+    <section className={classes.root}>
+      <Container className={cn(classes.banner, className)} banner>
+        {title ? (
           <Typography
-            className={classes.subheading}
             color="inherit"
             align="center"
-            variant="subheading"
-            component="p"
+            variant="display1"
+            gutterBottom
           >
-            {description}
+            {title}
           </Typography>
-        </Fragment>
-      ) : null}
-      {children}
-    </Container>
-    <img className={classes.roundEdge} src={edgeImg} alt="" />
-  </section>
+        ) : null}
+        {description ? (
+          <Fragment>
+            <Divider className={classes.divider}/>
+            <Typography
+              className={classes.subheading}
+              color="inherit"
+              align="center"
+              variant="subheading"
+              component="p"
+            >
+              {description}
+            </Typography>
+          </Fragment>
+        ) : null}
+        {children}
+      </Container>
+      <img className={classes.roundEdge} src={edgeImg} alt=""/>
+    </section>
+  </MuiThemeProvider>
 )
 
 export default withStyles(s)(HeaderBanner)

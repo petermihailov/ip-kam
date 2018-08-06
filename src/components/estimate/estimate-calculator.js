@@ -130,7 +130,7 @@ export default function getEstimate({
     },
   ]
 
-  if (bonus && bonus > 0 && bonus < bonusData.length && camsCount > 3) {
+  if (bonus >= 0 && bonus < bonusData.length && camsCount > 3) {
     result.push({
       label: 'Бонусы',
       data: [getBonus(bonus, insallationList)],

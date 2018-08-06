@@ -1,7 +1,7 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import FormControl from '@material-ui/core/FormControl'
-import InputLabel from '@material-ui/core/FormControl'
+import InputLabel from '@material-ui/core/InputLabel'
 import Grid from '@material-ui/core/Grid'
 import Select from '@material-ui/core/Select'
 
@@ -10,11 +10,11 @@ const styles = theme => ({})
 class CamsQuestion extends React.Component {
   renderSelect = (name, value, label) => {
     const { onChange } = this.props
-
     const id = name + '-id'
+
     return (
       <FormControl fullWidth>
-        <InputLabel htmlFor={id}>{label}</InputLabel>
+        <InputLabel htmlFor={id} shrink>{label}</InputLabel>
         <Select
           value={value}
           onChange={onChange}

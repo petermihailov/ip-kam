@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 import Link from 'gatsby-link'
 import { withStyles } from '@material-ui/core/styles'
 import Container from './../../components/container/container'
@@ -50,8 +51,8 @@ const s = theme => ({
   },
 })
 
-const Header = ({ classes }) => (
-  <footer className={classes.footer}>
+const Footer = ({ classes }) => (
+  <footer className={cn(classes.footer, 'noPrint')}>
     <Container className={classes.container}>
       <Grid container justify={'center'}>
         <Grid item xs={12} sm={4} md={3} className={classes.phonesBlock}>
@@ -76,7 +77,7 @@ const Header = ({ classes }) => (
           >
             Способы оплаты
           </Typography>
-          <PaymentSystems />
+          <PaymentSystems/>
           <Grid container justify={'space-around'} spacing={8}>
             <Grid item>
               <Button variant="contained" color="primary" size="large">
@@ -99,8 +100,8 @@ const Header = ({ classes }) => (
                 href={'tel:' + item.value}
                 button
               >
-                <CallIcon />
-                <ListItemText primary={item.label} disableTypography />
+                <CallIcon/>
+                <ListItemText primary={item.label} disableTypography/>
               </ListItem>
             ))}
           </List>
@@ -116,4 +117,4 @@ const Header = ({ classes }) => (
   </footer>
 )
 
-export default withStyles(s)(Header)
+export default withStyles(s)(Footer)

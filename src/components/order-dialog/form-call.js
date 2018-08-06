@@ -40,7 +40,7 @@ class CallForm extends Component {
         this.setState({ valid: { ...valid } })
         break
       case this.steps[1]:
-        valid[name] = value.replace(/[-_()\s*]/g, '').length === 12
+        valid[name] = value.trim().length > 0
         this.setState({ valid: { ...valid } })
         break
       default:

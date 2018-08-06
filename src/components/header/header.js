@@ -36,7 +36,7 @@ const s = theme => ({
 })
 
 const Header = ({ classes, width, location }) => (
-  <AppBar position="sticky" color="default">
+  <AppBar position="sticky" color="default" className="noPrint">
     <Toolbar className={classes.toolbar}>
       <Logo />
       {['xs', 'sm'].includes(width) ? (

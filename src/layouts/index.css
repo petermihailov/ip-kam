@@ -46,3 +46,11 @@ table {
 img {
   width: 100%;
 }
+
+@media print {
+  .noPrint {display: none !important;}
+}
+
+@media not print {
+  .printOnly {display: none !important;}
+}

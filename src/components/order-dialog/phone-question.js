@@ -9,37 +9,6 @@ import Input from '@material-ui/core/Input'
 
 const styles = theme => ({})
 
-function TextMaskCustom(props) {
-  const { inputRef, ...other } = props
-
-  return (
-    <MaskedInput
-      {...other}
-      ref={inputRef}
-      mask={[
-        '+',
-        '7',
-        ' ',
-        '(',
-        /\d/,
-        /\d/,
-        /\d/,
-        ')',
-        ' ',
-        /\d/,
-        /\d/,
-        /\d/,
-        '-',
-        /\d/,
-        /\d/,
-        /\d/,
-        /\d/,
-      ]}
-      showMask
-    />
-  )
-}
-
 export class PhoneField extends Component {
   render() {
     const { value, onChange, fullWidth } = this.props
@@ -54,7 +23,6 @@ export class PhoneField extends Component {
           name="phone"
           onChange={onChange}
           id="phone-mask-input"
-          inputComponent={TextMaskCustom}
           type="tel"
           required
           autoFocus
