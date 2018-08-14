@@ -22,6 +22,8 @@ import BonusQuestion from './bonus-question'
 import primary from '@material-ui/core/colors/deepOrange'
 import secondary from '@material-ui/core/colors/blueGrey'
 
+import pages from '../../../data/pages'
+
 const theme = createMuiTheme({
   palette: {
     primary,
@@ -200,7 +202,7 @@ class Survey extends Component {
                 color="primary"
                 size="large"
                 component={Link}
-                to={`estimate?${queryString.stringify({
+                to={`${pages[1].route}?${queryString.stringify({
                   insideCams,
                   outsideCams,
                   bonus,
