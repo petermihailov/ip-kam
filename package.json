@@ -18,8 +18,7 @@
   "scripts": {
     "develop": "gatsby develop --host localhost --port 8000",
     "format": "prettier --write 'src/**/*.js'",
-    "build": "gatsby build",
-    "ghpages": "git subtree push --prefix public origin gh-pages"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
     "prettier": "^1.13.7"

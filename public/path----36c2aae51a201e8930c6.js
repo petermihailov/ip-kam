@@ -1,2 +1,0 @@
-webpackJsonp([60335399758886],{211:function(t,a){t.exports={data:{site:{siteMetadata:{title:"IP-Kam - Установка систем видеонаблюдения"}}},layoutContext:{}}}});
-//# sourceMappingURL=path----36c2aae51a201e8930c6.js.map
