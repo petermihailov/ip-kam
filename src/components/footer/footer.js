@@ -77,7 +77,7 @@ const Footer = ({ classes }) => (
           >
             Способы оплаты
           </Typography>
-          <PaymentSystems/>
+          <PaymentSystems />
           <Grid container justify={'space-around'} spacing={8}>
             <Grid item>
               <Button variant="contained" color="primary" size="large">
@@ -100,8 +100,8 @@ const Footer = ({ classes }) => (
                 href={'tel:' + item.value}
                 button
               >
-                <CallIcon/>
-                <ListItemText primary={item.label} disableTypography/>
+                <CallIcon />
+                <ListItemText primary={item.label} disableTypography />
               </ListItem>
             ))}
           </List>

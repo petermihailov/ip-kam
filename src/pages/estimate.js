@@ -11,13 +11,16 @@ import FormHelperText from '@material-ui/core/FormHelperText'
 import InputLabel from '@material-ui/core/InputLabel'
 import Select from '@material-ui/core/Select'
 import Button from '@material-ui/core/Button'
+import Tooltip from '@material-ui/core/Tooltip'
 import HeaderBanner from '../components/header-banner/header-banner'
 import Container from '../components/container/container'
 import CamsQuestion from '../components/survey/cams-question'
 import { data as bonusData } from '../components/survey/bonus-question'
 import getEstimate from '../components/estimate/estimate-calculator'
 import EstimateTable from './../components/estimate/estimate'
-import Logo from '../components/logo/logo'
+
+import PrintIcon from '@material-ui/icons/Print'
+import LinkIcon from '@material-ui/icons/Link'
 
 const s = theme => ({
   container: {
@@ -38,11 +41,14 @@ const s = theme => ({
 })
 
 class Estimate extends Component {
-  onChange = (e) => {
+  onChange = e => {
     const { location } = this.props
     const { name, value } = e.target
     const parsedQueryParams = queryString.parse(location.search)
-    const queryParams = queryString.stringify({ ...parsedQueryParams, [name]: value })
+    const queryParams = queryString.stringify({
+      ...parsedQueryParams,
+      [name]: value,
+    })
     push(`/estimate?${queryParams}`)
   }
 
@@ -51,7 +57,9 @@ class Estimate extends Component {
 
     return (
       <FormControl fullWidth disabled={disabled}>
-        <InputLabel htmlFor={id} shrink>{label}</InputLabel>
+        <InputLabel htmlFor={id} shrink>
+          {label}
+        </InputLabel>
         <Select
           value={value}
           onChange={this.onChange}
@@ -68,7 +76,9 @@ class Estimate extends Component {
             </option>
           ))}
         </Select>
-        {disabled && <FormHelperText>Доступно при установке от 4 камер</FormHelperText>}
+        {disabled && (
+          <FormHelperText>Доступно при установке от 4 камер</FormHelperText>
+        )}
       </FormControl>
     )
   }
@@ -111,29 +121,27 @@ class Estimate extends Component {
           className="noPrint"
         >
           <Grid container spacing={8} className={classes.controls}>
-            {
-              camsCount > 0 && (
-                <Grid item xs={12} className={classes.buttons}>
-                  <Button
-                    className={classes.button}
-                    onClick={this.openOrderDialog}
-                    variant="contained"
-                    color="primary"
-                    size="large"
-                  >
-                    Оставить заявку
-                  </Button>
-                  <Button
-                    className={classes.button}
-                    onClick={this.openCallDialog}
-                    variant="contained"
-                    size="large"
-                  >
-                    Звонок по смете
-                  </Button>
-                </Grid>
-              )
-            }
+            {camsCount > 0 && (
+              <Grid item xs={12} className={classes.buttons}>
+                <Button
+                  className={classes.button}
+                  onClick={this.openOrderDialog}
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                >
+                  Оставить заявку
+                </Button>
+                <Button
+                  className={classes.button}
+                  onClick={this.openCallDialog}
+                  variant="contained"
+                  size="large"
+                >
+                  Звонок по смете
+                </Button>
+              </Grid>
+            )}
             <Grid item xs={12} sm={8}>
               <CamsQuestion
                 outsideCams={outsideCams}
@@ -142,26 +150,47 @@ class Estimate extends Component {
               />
             </Grid>
             <Grid item xs={12} sm={4}>
-              {
-                this.renderBonusField('bonus', bonus, 'Выберите бонус', camsCount < 4)
-              }
+              {this.renderBonusField(
+                'bonus',
+                bonus,
+                'Выберите бонус',
+                camsCount < 4
+              )}
             </Grid>
           </Grid>
         </HeaderBanner>
         <Container>
           <Paper elevation={0} square className={classes.container}>
-            <Typography
-              variant="title"
-              gutterBottom
-              className="printOnly"
-            >
+            <div className="noPrint">
+              <Tooltip title="Печать" placement="top">
+                <Button
+                  variant="fab"
+                  color="primary"
+                  aria-label="Print"
+                  className={classes.button}
+                >
+                  <PrintIcon />
+                </Button>
+              </Tooltip>
+              <Tooltip title="Копировать ссылку" placement="top">
+                <Button
+                  variant="fab"
+                  color="primary"
+                  aria-label="Copy"
+                  className={classes.button}
+                >
+                  <LinkIcon />
+                </Button>
+              </Tooltip>
+            </div>
+            <Typography variant="title" gutterBottom className="printOnly">
               {`ip-kam.ru: Смета на установку ${camsCount} камер`}
             </Typography>
-            {
-              (camsCount > 0)
-                ? <EstimateTable data={data}/>
-                : 'Выберите количество камер'
-            }
+            {camsCount > 0 ? (
+              <EstimateTable data={data} />
+            ) : (
+              'Выберите количество камер'
+            )}
           </Paper>
         </Container>
       </Fragment>

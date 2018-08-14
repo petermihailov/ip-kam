@@ -72,7 +72,7 @@ const HeaderBanner = ({ className, classes, title, description, children }) => (
         ) : null}
         {description ? (
           <Fragment>
-            <Divider className={classes.divider}/>
+            <Divider className={classes.divider} />
             <Typography
               className={classes.subheading}
               color="inherit"
@@ -86,7 +86,7 @@ const HeaderBanner = ({ className, classes, title, description, children }) => (
         ) : null}
         {children}
       </Container>
-      <img className={classes.roundEdge} src={edgeImg} alt=""/>
+      <img className={classes.roundEdge} src={edgeImg} alt="" />
     </section>
   </MuiThemeProvider>
 )

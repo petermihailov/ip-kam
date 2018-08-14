@@ -12,11 +12,6 @@ const styles = theme => ({
   section: {
     margin: theme.spacing.unit * 2,
   },
-  [theme.breakpoints.up('sm')]: {
-    container: {
-      display: 'none',
-    },
-  },
 })
 
 class OrderSection extends Component {

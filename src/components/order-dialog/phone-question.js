@@ -1,61 +1,22 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import Switch from '@material-ui/core/Switch'
-import MaskedInput from 'react-text-mask'
-import FormControl from '@material-ui/core/FormControl'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import InputLabel from '@material-ui/core/InputLabel'
-import Input from '@material-ui/core/Input'
+import TextField from '@material-ui/core/TextField'
 
 const styles = theme => ({})
 
-export class PhoneField extends Component {
-  render() {
-    const { value, onChange, fullWidth } = this.props
-
-    return (
-      <FormControl fullWidth={fullWidth}>
-        <InputLabel htmlFor="phone-mask-input" required focused shrink>
-          Телефон
-        </InputLabel>
-        <Input
-          value={value}
-          name="phone"
-          onChange={onChange}
-          id="phone-mask-input"
-          type="tel"
-          required
-          autoFocus
-        />
-      </FormControl>
-    )
-  }
-}
-
 class PhoneQuestion extends Component {
-  onCommentChange = (e, value) => {
-    const { onChange, setLastStep } = this.props
-    const { name } = e.target
-
-    setLastStep(!value)
-
-    onChange({ target: { name, value } })
-  }
-
   render() {
-    const { value, onChange } = this.props
+    const { onChange } = this.props
+
     return (
-      <Fragment>
-        <PhoneField value={value} onChange={onChange} fullWidth />
-        <FormControl fullWidth>
-          <FormControlLabel
-            control={
-              <Switch name="showComment" onChange={this.onCommentChange} />
-            }
-            label="Оставить комментарий"
-          />
-        </FormControl>
-      </Fragment>
+      <TextField
+        key="phone"
+        label="Телефон"
+        name="phone"
+        onChange={onChange}
+        fullWidth
+        required
+      />
     )
   }
 }

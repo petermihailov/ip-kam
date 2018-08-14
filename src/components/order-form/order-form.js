@@ -7,7 +7,6 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
 import Container from '../container/container'
-import { PhoneField } from '../order-dialog/phone-question'
 
 const styles = theme => ({
   container: {
@@ -37,7 +36,13 @@ class OrderForm extends Component {
             required
             fullWidth
           />
-          <PhoneField fullWidth />
+          <TextField
+            name="phone"
+            label="Телефон"
+            margin="normal"
+            required
+            fullWidth
+          />
           <TextField
             name="comment"
             label="Комментарий"

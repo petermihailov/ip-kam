@@ -14,7 +14,9 @@ class CamsQuestion extends React.Component {
 
     return (
       <FormControl fullWidth>
-        <InputLabel htmlFor={id} shrink>{label}</InputLabel>
+        <InputLabel htmlFor={id} shrink>
+          {label}
+        </InputLabel>
         <Select
           value={value}
           onChange={onChange}

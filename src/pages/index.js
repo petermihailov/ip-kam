@@ -81,8 +81,8 @@ class IndexPage extends Component {
         </HeaderBanner>
         <ValuePropositionSection />
         <AdvantageSection />
-        <MediaSideSection />
         <OrderSection />
+        <MediaSideSection />
         <SurveySection />
         <TimelineSection />
         <CapabilitiesSection />

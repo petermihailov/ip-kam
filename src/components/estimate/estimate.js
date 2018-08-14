@@ -51,10 +51,18 @@ const Estimate = ({ classes, data }) => (
         <TableHead>
           <TableRow>
             <TableCell className={classes.cell}>Наименование</TableCell>
-            <TableCell className={classes.cell} numeric>Единицы</TableCell>
-            <TableCell className={classes.cell} numeric>Количество</TableCell>
-            <TableCell className={classes.cell} numeric>Цена</TableCell>
-            <TableCell className={classes.cell} numeric>Итог</TableCell>
+            <TableCell className={classes.cell} numeric>
+              Единицы
+            </TableCell>
+            <TableCell className={classes.cell} numeric>
+              Количество
+            </TableCell>
+            <TableCell className={classes.cell} numeric>
+              Цена
+            </TableCell>
+            <TableCell className={classes.cell} numeric>
+              Итог
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -73,11 +81,19 @@ const Estimate = ({ classes, data }) => (
               {data.map((n, idx) => {
                 return (
                   <TableRow key={idx}>
-                    <TableCell component="th" scope="row" className={classes.cell}>
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      className={classes.cell}
+                    >
                       {n.name}
                     </TableCell>
-                    <TableCell className={classes.cell} numeric>{n.measure}</TableCell>
-                    <TableCell className={classes.cell} numeric>{n.count}</TableCell>
+                    <TableCell className={classes.cell} numeric>
+                      {n.measure}
+                    </TableCell>
+                    <TableCell className={classes.cell} numeric>
+                      {n.count}
+                    </TableCell>
                     <TableCell className={classes.cell} numeric>
                       {n.price.toLocaleString('ru') + ' ₽'}
                     </TableCell>

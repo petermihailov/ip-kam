@@ -4,7 +4,8 @@ import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
 import Container from '../../../components/container/container'
 
-import vanImg from './van.png'
+// import imgSrc from './van.png'
+import imgSrc from './camera.png'
 
 const s = theme => ({
   container: {
@@ -24,6 +25,8 @@ const s = theme => ({
     position: 'relative',
     maxWidth: 400,
     margin: `0 auto ${theme.spacing.unit * 2}px`,
+    width: 'auto',
+    height: 200,
   },
   [theme.breakpoints.down('sm')]: {
     text: {
@@ -40,7 +43,7 @@ const s = theme => ({
 
 const ValueProposition = ({ classes }) => (
   <Container component="section" className={classes.container}>
-    <img className={classes.image} src={vanImg} alt="" />
+    <img className={classes.image} src={imgSrc} alt="" />
     <Paper className={classes.textBlock} elevation={0} square>
       <Typography
         className={classes.text}
